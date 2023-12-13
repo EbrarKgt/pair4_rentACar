@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea701247-0114-44f4-8945-f3eb3e2c0db2" name="Changes" comment="" />
+    <list default="true" id="ea701247-0114-44f4-8945-f3eb3e2c0db2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pair4/controllers/CarsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pair4/controllers/CarsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/controllers/CarsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/controllers/CarsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/entities/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/entities/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/repositories/CarRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/repositories/CarRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/services/abstracts/CarService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/services/abstracts/CarService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/services/abstracts/ColorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/services/abstracts/ColorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/services/abstracts/ModelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/services/abstracts/ModelService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/services/concretes/CarManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/services/concretes/CarManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/services/concretes/ColorManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/services/concretes/ColorManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/services/concretes/ModelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/services/concretes/ModelManager.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,12 +33,52 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2ZVBE3cnwlquFcnO9ruQyWkmX0q" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="pair4_rentACar" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="pair4_rentACar" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ea701247-0114-44f4-8945-f3eb3e2c0db2" name="Changes" comment="" />
+      <created>1702497250455</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702497250455</updated>
+    </task>
     <servers />
   </component>
 </project>
