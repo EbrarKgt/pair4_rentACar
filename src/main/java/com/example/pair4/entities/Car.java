@@ -2,11 +2,13 @@ package com.example.pair4.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
 
 @Entity
 @Table(name = "cars")
+@Data
 public class Car {
 
     @Id

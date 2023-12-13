@@ -9,10 +9,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AddCarRequest {
+
     private String plate;
     private int kilometer;
     private double dailyPrice;
     private int year;
-    private String modelName;
-    private String colorName;
+    private int modelId;
+    private int colorId;
+
 }
