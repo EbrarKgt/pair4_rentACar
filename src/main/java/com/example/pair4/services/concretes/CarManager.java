@@ -1,5 +1,6 @@
 package com.example.pair4.services.concretes;
 
+import com.example.pair4.core.utilities.mappers.ModelMapperService;
 import com.example.pair4.entities.Car;
 import com.example.pair4.entities.Color;
 import com.example.pair4.entities.Model;
@@ -16,6 +17,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -24,42 +26,20 @@ public class CarManager implements CarService {
     private final CarRepository carRepository;
     private final ModelService modelService;
     private final ColorService colorService;
-
+    private ModelMapperService modelMapperService;
     @Override
     public void add(AddCarRequest addCarRequest) {
 
-        Car car = new Car();
-
-        car.setKilometer(addCarRequest.getKilometer());
-
-        car.setPlate(addCarRequest.getPlate());
-
-        car.setYear(addCarRequest.getYear());
-
-        car.setDailyPrice(addCarRequest.getDailyPrice());
-
-        Model model = modelService.getById(addCarRequest.getModelId());
-        car.setModel(model);
-
-        Color color = colorService.getById(addCarRequest.getColorId());
-        car.setColor(color);
-
-        carRepository.save(car);
-
-
+          Car car = this.modelMapperService.forRequest().map(addCarRequest, Car.class);
+          this.carRepository.save(car);
     }
 
     @Override
     public void update(UpdateCarRequest updateCarRequest) {
-
         Car carToUpdate = carRepository.findById(updateCarRequest.getId()).orElseThrow();
-
         carToUpdate.setKilometer(updateCarRequest.getKilometer());
-
         carToUpdate.setPlate(updateCarRequest.getPlate());
-
         carToUpdate.setYear(updateCarRequest.getYear());
-
         carToUpdate.setDailyPrice(updateCarRequest.getDailyPrice());
 
         Model model = modelService.getById(updateCarRequest.getModelId());
@@ -74,18 +54,18 @@ public class CarManager implements CarService {
 
     @Override
     public void delete(DeleteCarRequest deleteCarRequest) {
-
         Car carToDelete = carRepository.findById(deleteCarRequest.getId()).orElseThrow();
-
         carRepository.delete(carToDelete);
 
     }
 
     @Override
     public List<GetAllCarResponse> getAll() {
-        return carRepository.getAll();
-        ///////////////
-
+        List<Car> cars = carRepository.findAll();
+        List<GetAllCarResponse> carResponses = cars.stream()
+                .map(car -> this.modelMapperService.forResponse().map(car,GetAllCarResponse.class))
+                .collect(Collectors.toList());
+        return carResponses;
 
     }
 

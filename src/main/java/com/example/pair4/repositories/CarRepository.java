@@ -10,6 +10,5 @@ import java.util.List;
 @Repository
 public interface CarRepository extends JpaRepository<Car, Integer> {
 
-        List<GetAllCarResponse> getAll();
 
 }
