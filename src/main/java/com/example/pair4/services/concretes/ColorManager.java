@@ -17,7 +17,7 @@ public class ColorManager implements ColorService {
     private final ModelMapperService modelMapperService;
     @Override
     public Color getById(int id) {
-        return colorRepository.findById(id).orElseThrow();
+        return colorRepository.findById(id).orElseThrow(()-> new RuntimeException("There is no color with this id!"));
     }
 
 
