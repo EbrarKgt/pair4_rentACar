@@ -1,8 +1,6 @@
 package com.example.pair4.controllers;
 
-import com.example.pair4.services.abstracts.CarService;
 import com.example.pair4.services.abstracts.ColorService;
-import com.example.pair4.services.dtos.car.requests.AddCarRequest;
 import com.example.pair4.services.dtos.color.requests.AddColorRequest;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
