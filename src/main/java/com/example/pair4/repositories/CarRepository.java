@@ -10,5 +10,6 @@ import java.util.List;
 @Repository
 public interface CarRepository extends JpaRepository<Car, Integer> {
 
+    boolean existsCarByPlate(String plate);
 
 }
