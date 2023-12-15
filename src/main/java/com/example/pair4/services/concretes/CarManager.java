@@ -30,13 +30,8 @@ public class CarManager implements CarService {
         if (carRepository.existsCarByPlate(addCarRequest.getPlate())){
             throw new RuntimeException("Bu plaka ikinci kez kaydedilemez.");
         }
-
-
-        //Model ve Color Id carManager da kontrol edilmemesi lazım,
-        //ModelMapper kullandıgımız icin color,model service devre dısı kaldı
-        //business kurallarımızda devre dışı kaldı yani
-        //bunun üzerine düşünelim.
-
+            modelService.getById(addCarRequest.getModelId());
+            colorService.getById(addCarRequest.getColorId());
 
           Car car = this.modelMapperService.forRequest().map(addCarRequest, Car.class);
           this.carRepository.save(car);
