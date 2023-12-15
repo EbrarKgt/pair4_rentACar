@@ -14,7 +14,7 @@ Its current features are listed below.
 - can delete
 * The user can access the list of saved vehicles with the filters he chooses.
 * It prevents unwanted entries from accessing the database with the validation rules it sets during the registration phase.
-* 
+ 
 **The benefits it provides to its customers are as follows.**
   
 * Invoicing system available. (in development)
