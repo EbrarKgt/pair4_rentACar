@@ -5,27 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="841cd9c8-2bcb-428b-9593-7dd5e5fc2d3a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_12_2023_21_31__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_12_2023_21_31__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pair4/Pair4Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pair4/Pair4Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pair4/repositories/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pair4/repositories/CarRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pair4/entities/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pair4/entities/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pair4/entities/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pair4/entities/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pair4/services/concretes/CarManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pair4/services/concretes/CarManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/Pair4Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/Pair4Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/entities/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/entities/Car.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/repositories/CarRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/repositories/CarRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/services/abstracts/ColorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/services/abstracts/ColorService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/services/abstracts/ModelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/services/abstracts/ModelService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pair4/services/dtos/car/responses/GetAllCarResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pair4/services/dtos/car/responses/GetAllCarResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/entities/Color.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/entities/Color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/entities/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/entities/Model.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/services/concretes/CarManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/services/concretes/CarManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/services/concretes/ColorManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/services/concretes/ColorManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/services/concretes/ModelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/services/concretes/ModelManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/services/dtos/car/requests/AddCarRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/services/dtos/car/requests/AddCarRequest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/services/dtos/car/responses/GetAllCarResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/services/dtos/car/responses/GetAllCarResponse.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,9 +34,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2ZXwjv1ojDu9v2tjwjbM5oY7cGG" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -58,13 +45,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

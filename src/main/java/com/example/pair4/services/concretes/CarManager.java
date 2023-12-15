@@ -26,7 +26,7 @@ public class CarManager implements CarService {
     private final CarRepository carRepository;
     private final ModelService modelService;
     private final ColorService colorService;
-    private ModelMapperService modelMapperService;
+    private final ModelMapperService modelMapperService;
     @Override
     public void add(AddCarRequest addCarRequest) {
 
@@ -64,7 +64,7 @@ public class CarManager implements CarService {
         List<Car> cars = carRepository.findAll();
         List<GetAllCarResponse> carResponses = cars.stream()
                 .map(car -> this.modelMapperService.forResponse().map(car,GetAllCarResponse.class))
-                .collect(Collectors.toList());
+                .toList();
         return carResponses;
 
     }
