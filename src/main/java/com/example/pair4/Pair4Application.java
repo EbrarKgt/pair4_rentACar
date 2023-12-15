@@ -9,12 +9,12 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class Pair4Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Pair4Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Pair4Application.class, args);
+    }
 
-	@Bean
-	public ModelMapper getModelMapper(){
-		return new ModelMapper();
-	}
+    @Bean
+    public ModelMapper getModelMapper() {
+        return new ModelMapper();
+    }
 }

@@ -17,10 +17,8 @@ public class ColorsController {
     private final ColorService colorService;
 
     @PostMapping
-    private void add(@RequestBody @Valid AddColorRequest addColorRequest){
+    private void add(@RequestBody @Valid AddColorRequest addColorRequest) {
 
         colorService.add(addColorRequest);
-
     }
-
 }

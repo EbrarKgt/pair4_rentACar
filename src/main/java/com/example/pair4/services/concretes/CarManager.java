@@ -28,7 +28,7 @@ public class CarManager implements CarService {
     @Override
     public void add(AddCarRequest addCarRequest) {
         if (carRepository.existsCarByPlate(addCarRequest.getPlate())){
-            throw new RuntimeException("Bu plaka ikinci kez kaydedilemez.");
+            throw new RuntimeException("The same plate cannot be registered twice.");
         }
             modelService.getById(addCarRequest.getModelId());
             colorService.getById(addCarRequest.getColorId());
@@ -39,17 +39,14 @@ public class CarManager implements CarService {
 
     @Override
     public void update(UpdateCarRequest updateCarRequest) {
-
         Car carToUpdate = this.modelMapperService.forRequest().map(updateCarRequest, Car.class);
         this.carRepository.save(carToUpdate);
-
     }
 
     @Override
     public void delete(DeleteCarRequest deleteCarRequest) {
         Car carToDelete = carRepository.findById(deleteCarRequest.getId()).orElseThrow();
         carRepository.delete(carToDelete);
-
     }
 
     @Override
@@ -59,7 +56,6 @@ public class CarManager implements CarService {
                 .map(car -> this.modelMapperService.forResponse().map(car,GetAllCarResponse.class))
                 .toList();
         return carResponses;
-
     }
 
     @Override
@@ -67,9 +63,6 @@ public class CarManager implements CarService {
         Car car = this.carRepository.findById(id).orElseThrow();
         GetByIdResponse getByIdResponse = this.modelMapperService.forResponse()
                 .map(car,GetByIdResponse.class);
-
         return getByIdResponse;
     }
 }
-
-// @NoArgsConstructor :)

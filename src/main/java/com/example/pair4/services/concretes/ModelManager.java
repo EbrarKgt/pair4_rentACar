@@ -14,8 +14,6 @@ public class ModelManager implements ModelService {
 
     @Override
     public Model getById(int id) {
-        return modelRepository.findById(id).orElseThrow(()-> new RuntimeException("There is no model with this id!"));
-
-
+        return modelRepository.findById(id).orElseThrow(() -> new RuntimeException("There is no model with this id!"));
     }
 }

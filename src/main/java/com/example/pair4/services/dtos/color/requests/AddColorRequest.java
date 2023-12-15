@@ -12,7 +12,4 @@ public class AddColorRequest {
 
     @Length(min = 2)
     private String colorName;
-
-
-
 }

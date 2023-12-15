@@ -23,7 +23,7 @@ public class Model {
     @JoinColumn(name = "brand_id")
     private Brand brand;
 
-    @OneToMany (mappedBy = "model")
+    @OneToMany(mappedBy = "model")
     @JsonIgnore
     private List<Car> cars;
 }

@@ -2,12 +2,14 @@ package com.example.pair4.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Table (name = "users")
+@Table(name = "users")
 @Entity
+@Data
 public class User {
 
     @Id

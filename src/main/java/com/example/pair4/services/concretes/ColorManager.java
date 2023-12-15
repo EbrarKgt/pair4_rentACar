@@ -15,19 +15,18 @@ public class ColorManager implements ColorService {
 
     private final ColorRepository colorRepository;
     private final ModelMapperService modelMapperService;
+
     @Override
     public Color getById(int id) {
-        return colorRepository.findById(id).orElseThrow(()-> new RuntimeException("There is no color with this id!"));
+        return colorRepository.findById(id).orElseThrow(() -> new RuntimeException("There is no color with this id!"));
     }
-
 
     @Override
     public void add(AddColorRequest addColorRequest) {
 
-        if (colorRepository.existsColorByName(addColorRequest.getColorName())){
-            throw new RuntimeException("Bu renk ikinci kez kaydedilemez.");
+        if (colorRepository.existsColorByName(addColorRequest.getColorName())) {
+            throw new RuntimeException("The same color cannot be registered twice.");
         }
-
 
         Color color = this.modelMapperService.forRequest().map(addColorRequest, Color.class);
         this.colorRepository.save(color);

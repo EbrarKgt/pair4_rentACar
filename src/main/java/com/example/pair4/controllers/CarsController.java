@@ -18,33 +18,30 @@ import java.util.List;
 @AllArgsConstructor
 public class CarsController {
 
-
     private final CarService carService;
 
     @PostMapping
-    private void add(@RequestBody @Valid AddCarRequest addCarRequest){
-
+    private void add(@RequestBody @Valid AddCarRequest addCarRequest) {
         carService.add(addCarRequest);
-
     }
 
     @DeleteMapping
-    private void delete(@RequestBody @Valid DeleteCarRequest deleteCarRequest){
+    private void delete(@RequestBody @Valid DeleteCarRequest deleteCarRequest) {
         carService.delete(deleteCarRequest);
     }
 
     @PutMapping
-    private void update(@RequestBody @Valid UpdateCarRequest updateCarRequest){
+    private void update(@RequestBody @Valid UpdateCarRequest updateCarRequest) {
         carService.update(updateCarRequest);
     }
 
     @GetMapping
-    private List<GetAllCarResponse> getAll(){
+    private List<GetAllCarResponse> getAll() {
         return carService.getAll();
     }
 
     @GetMapping("{id}")
-    private GetByIdResponse getById(@PathVariable int id){
+    private GetByIdResponse getById(@PathVariable int id) {
         return carService.getById(id);
     }
 }

@@ -14,22 +14,28 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AddCarRequest {
 
-    @Pattern(regexp = "^(0[1-9]|[1-7][0-9]|8[01])(([A-Z])(\\d{4,5})|([A-Z]{2})(\\d{3,4})|([A-Z]{3})(\\d{2}))$", message = "TR plakasına uymuyor.")
+    @Pattern(regexp = "^(0[1-9]|[1-7][0-9]|8[01])" +
+            "(([A-Z])(\\d{4,5})|([A-Z]{2})(\\d{3,4})|([A-Z]{3})(\\d{2}))$",
+            message = "Invalid licence plate format! Enter a licence plate in a format suitable for the TR licence plate.")
     private String plate;
+
     public void setPlate(String plate) {
         this.plate = plate != null ? plate.replaceAll("\\s", "") : null;
     }
 
-    @Positive(message = "Kilometre 0 dan küçük olamaz.")
+    @Positive(message = "Enter a value greater than 0 for kilometer.")
     private int kilometer;
-    @Positive(message = "Günlük kira ücreti 0 dan küçük olamaz.")
-    private double dailyPrice;
-    @Min(value = 2005, message = "Model yılı 2005 den az olamaz.")
-    @Max(value = 2024, message = "Model yılı 2024 den fazla olamaz.")
-    private int year;
-    @Positive(message = "ID 0 dan büyük olmalı.")
-    private int modelId;
-    @Positive(message = "ID pozitif olmalı.")
-    private int colorId;
 
+    @Positive(message = "Enter a value greater than 0₺ for daily price.")
+    private double dailyPrice;
+
+    @Min(value = 2005, message = "Enter a value greater than 2005 for the model year.")
+    @Max(value = 2024, message = "Enter a value less than 2024 for the model year.")
+    private int year;
+
+    @Positive(message = "Enter a value greater than 0 for modelId.")
+    private int modelId;
+
+    @Positive(message = "Enter a value greater than 0 for colorId.")
+    private int colorId;
 }
