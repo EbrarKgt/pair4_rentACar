@@ -2,8 +2,6 @@ package com.example.pair4.services.concretes;
 
 import com.example.pair4.core.utilities.mappers.ModelMapperService;
 import com.example.pair4.entities.Car;
-import com.example.pair4.entities.Color;
-import com.example.pair4.entities.Model;
 import com.example.pair4.repositories.CarRepository;
 import com.example.pair4.services.abstracts.CarService;
 import com.example.pair4.services.abstracts.ColorService;
@@ -17,7 +15,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 @Service
 @AllArgsConstructor
@@ -36,19 +34,9 @@ public class CarManager implements CarService {
 
     @Override
     public void update(UpdateCarRequest updateCarRequest) {
-        Car carToUpdate = carRepository.findById(updateCarRequest.getId()).orElseThrow();
-        carToUpdate.setKilometer(updateCarRequest.getKilometer());
-        carToUpdate.setPlate(updateCarRequest.getPlate());
-        carToUpdate.setYear(updateCarRequest.getYear());
-        carToUpdate.setDailyPrice(updateCarRequest.getDailyPrice());
 
-        Model model = modelService.getById(updateCarRequest.getModelId());
-        carToUpdate.setModel(model);
-
-        Color color = colorService.getById(updateCarRequest.getColorId());
-        carToUpdate.setColor(color);
-
-        carRepository.save(carToUpdate);
+        Car carToUpdate = this.modelMapperService.forRequest().map(updateCarRequest, Car.class);
+        this.carRepository.save(carToUpdate);
 
     }
 
@@ -71,7 +59,11 @@ public class CarManager implements CarService {
 
     @Override
     public GetByIdResponse getById(int id) {
-        return null;
+        Car car = this.carRepository.findById(id).orElseThrow();
+        GetByIdResponse getByIdResponse = this.modelMapperService.forResponse()
+                .map(car,GetByIdResponse.class);
+
+        return getByIdResponse;
     }
 }
 

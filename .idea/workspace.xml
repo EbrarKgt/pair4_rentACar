@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="841cd9c8-2bcb-428b-9593-7dd5e5fc2d3a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pair4/entities/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pair4/entities/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pair4/entities/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pair4/entities/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pair4/services/concretes/CarManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pair4/services/concretes/CarManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pair4/services/dtos/car/responses/GetAllCarResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pair4/services/dtos/car/responses/GetAllCarResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/entities/Color.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/entities/Color.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/entities/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/entities/Model.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/services/concretes/CarManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/services/concretes/CarManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pair4/services/dtos/car/responses/GetAllCarResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/pair4/services/dtos/car/responses/GetAllCarResponse.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
