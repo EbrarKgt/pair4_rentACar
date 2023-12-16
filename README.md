@@ -2,7 +2,7 @@
 
 ![2a5ca270f25420e79e29802cc8a3bfed.jpeg](https://imgtr.ee/images/2023/12/15/2a5ca270f25420e79e29802cc8a3bfed.jpeg)
 
-## About Project
+## About The Project
 This project is a web-based car rental service.
 Its current features are listed below.  
 
