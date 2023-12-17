@@ -22,10 +22,11 @@ public class UserManager implements UserService {
 
     @Override
     public List<GetAllUserResponse> getAll() {
-        List<User> users = this.userRepository.findAll();
+        List<User> users = userRepository.findAll();
         List<GetAllUserResponse> userResponses = users.stream()
                 .map(user -> this.modelMapperService.forResponse()
-                        .map(users, GetAllUserResponse.class)).toList();
+                        .map(user, GetAllUserResponse.class))
+                        .toList();
         return userResponses;
     }
 
