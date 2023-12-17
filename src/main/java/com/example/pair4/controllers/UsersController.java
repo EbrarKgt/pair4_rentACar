@@ -24,22 +24,22 @@ public class UsersController {
     }
 
     @GetMapping("{id}")
-    private GetByIdResponse getByIdResponse(@PathVariable int id){
+    private GetByIdResponse getByIdResponse(@PathVariable int id) {
         return userService.getByIdResponse(id);
     }
 
     @PostMapping
-    private void addUserRequest (@RequestBody @Valid AddUserRequest addUserRequest){
+    private void addUserRequest(@RequestBody @Valid AddUserRequest addUserRequest) {
         userService.addUser(addUserRequest);
     }
 
     @PutMapping
-    private void updateUserRequest (@RequestBody @Valid UpdateUserRequest updateUserRequest){
+    private void updateUserRequest(@RequestBody @Valid UpdateUserRequest updateUserRequest) {
         userService.updateUser(updateUserRequest);
     }
 
     @DeleteMapping
-    private void deleteUserRequest (@RequestBody @Valid DeleteUserRequest deleteUserRequest) {
+    private void deleteUserRequest(@RequestBody @Valid DeleteUserRequest deleteUserRequest) {
         userService.deleteUser(deleteUserRequest);
     }
 }
