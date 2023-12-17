@@ -1,5 +1,6 @@
 package com.example.pair4.services.abstracts;
 
+import com.example.pair4.entities.Car;
 import com.example.pair4.services.dtos.car.requests.AddCarRequest;
 import com.example.pair4.services.dtos.car.requests.DeleteCarRequest;
 import com.example.pair4.services.dtos.car.requests.UpdateCarRequest;
@@ -13,6 +14,7 @@ public interface CarService {
     void update(UpdateCarRequest updateCarRequest);
     void delete(DeleteCarRequest deleteCarRequest);
     List<GetAllCarResponse> getAll();
-    GetByIdResponse getById(int id);
+    GetByIdResponse getByIdResponse(int id);
+    Car getById(int id);
 
 }

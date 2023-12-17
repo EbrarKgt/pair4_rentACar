@@ -60,10 +60,15 @@ public class CarManager implements CarService {
     }
 
     @Override
-    public GetByIdResponse getById(int id) {
+    public GetByIdResponse getByIdResponse(int id) {
         Car car = this.carRepository.findById(id).orElseThrow();
         GetByIdResponse getByIdResponse = this.modelMapperService.forResponse()
                 .map(car, GetByIdResponse.class);
         return getByIdResponse;
+    }
+
+    @Override
+    public Car getById(int id) {
+        return carRepository.findById(id).orElseThrow(() -> new RuntimeException("There is no car with this id!"));
     }
 }
