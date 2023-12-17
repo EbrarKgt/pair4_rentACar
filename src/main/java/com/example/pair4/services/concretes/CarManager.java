@@ -33,8 +33,8 @@ public class CarManager implements CarService {
             modelService.getById(addCarRequest.getModelId());
             colorService.getById(addCarRequest.getColorId());
 
-          Car car = this.modelMapperService.forRequest().map(addCarRequest, Car.class);
-          this.carRepository.save(car);
+          Car carToAdd = this.modelMapperService.forRequest().map(addCarRequest, Car.class);
+          this.carRepository.save(carToAdd);
     }
 
     @Override
