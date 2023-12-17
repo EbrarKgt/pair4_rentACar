@@ -20,5 +20,5 @@ public interface UserService {
 
     void deleteUser(DeleteUserRequest deleteUserRequest);
 
-    User getById(int id);
+    User getById(int id);  //isimlendirilmesine bakılsın
 }
