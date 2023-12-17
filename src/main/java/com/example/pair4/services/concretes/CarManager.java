@@ -25,16 +25,17 @@ public class CarManager implements CarService {
     private final ModelService modelService;
     private final ColorService colorService;
     private final ModelMapperService modelMapperService;
+
     @Override
     public void add(AddCarRequest addCarRequest) {
-        if (carRepository.existsCarByPlate(addCarRequest.getPlate())){
+        if (carRepository.existsCarByPlate(addCarRequest.getPlate())) {
             throw new RuntimeException("The same plate cannot be registered twice.");
         }
-            modelService.getById(addCarRequest.getModelId());
-            colorService.getById(addCarRequest.getColorId());
+        modelService.getById(addCarRequest.getModelId());
+        colorService.getById(addCarRequest.getColorId());
 
-          Car car = this.modelMapperService.forRequest().map(addCarRequest, Car.class);
-          this.carRepository.save(car);
+        Car car = this.modelMapperService.forRequest().map(addCarRequest, Car.class);
+        this.carRepository.save(car);
     }
 
     @Override
@@ -53,7 +54,7 @@ public class CarManager implements CarService {
     public List<GetAllCarResponse> getAll() {
         List<Car> cars = carRepository.findAll();
         List<GetAllCarResponse> carResponses = cars.stream()
-                .map(car -> this.modelMapperService.forResponse().map(car,GetAllCarResponse.class))
+                .map(car -> this.modelMapperService.forResponse().map(car, GetAllCarResponse.class))
                 .toList();
         return carResponses;
     }
@@ -62,7 +63,7 @@ public class CarManager implements CarService {
     public GetByIdResponse getById(int id) {
         Car car = this.carRepository.findById(id).orElseThrow();
         GetByIdResponse getByIdResponse = this.modelMapperService.forResponse()
-                .map(car,GetByIdResponse.class);
+                .map(car, GetByIdResponse.class);
         return getByIdResponse;
     }
 }
