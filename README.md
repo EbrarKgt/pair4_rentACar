@@ -40,7 +40,7 @@ Its current features are listed below.
 
 **The features that users have are as follows**
 
-* The vehicles they want to rent to the system 
+* The vehicles they want to rent to the system
 - can add
 - can update
 - can delete
