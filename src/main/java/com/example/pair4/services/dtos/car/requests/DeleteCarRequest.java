@@ -11,5 +11,4 @@ import lombok.NoArgsConstructor;
 public class DeleteCarRequest {
     @Positive(message = "Enter a value greater than 0.")
     private int id;
-
 }
