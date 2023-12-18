@@ -1,12 +1,12 @@
-package com.example.pair4.services.dtos.color.requests;
+package com.example.pair4.services.dtos.brand.responses;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class DeleteColorRequest {
-    private int id;
+public class GetByIdBrandResponse {
+    private String brandName;
 }

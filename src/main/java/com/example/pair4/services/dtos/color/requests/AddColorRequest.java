@@ -10,6 +10,6 @@ import org.hibernate.validator.constraints.Length;
 @NoArgsConstructor
 public class AddColorRequest {
 
-    @Length(min = 2)
+    @Length(min = 2, message = "The color name must have a minimum length of 2 letters.")
     private String colorName;
 }
