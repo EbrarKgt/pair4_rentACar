@@ -26,7 +26,10 @@ public class BrandManager implements BrandService {
         return brandRepository.findById(id).orElseThrow(() -> new RuntimeException("There is no brand with this id!"));
     }
 
-
+    @Override
+    public boolean existsByBrandId(int brandId) {
+        return false;
+    }
 
     @Override
     public void add(AddBrandRequest addBrandRequest) {
