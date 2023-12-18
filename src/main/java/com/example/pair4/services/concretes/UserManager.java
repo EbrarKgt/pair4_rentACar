@@ -38,19 +38,19 @@ public class UserManager implements UserService {
     }
 
     @Override
-    public void addUser(AddUserRequest addUserRequest) {
+    public void add(AddUserRequest addUserRequest) {
         User userToAdd = this.modelMapperService.forRequest().map(addUserRequest, User.class);
         this.userRepository.save(userToAdd);
     }
 
     @Override
-    public void updateUser(UpdateUserRequest updateUserRequest) {
+    public void update(UpdateUserRequest updateUserRequest) {
         User userToUpdate = this.modelMapperService.forRequest().map(updateUserRequest, User.class);
         this.userRepository.save(userToUpdate);
     }
 
     @Override
-    public void deleteUser(DeleteUserRequest deleteUserRequest) {
+    public void delete(DeleteUserRequest deleteUserRequest) {
         User userToDelete = this.userRepository.findById(deleteUserRequest.getId()).orElseThrow();
         this.userRepository.delete(userToDelete);
     }

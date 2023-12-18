@@ -30,16 +30,16 @@ public class UsersController {
 
     @PostMapping
     private void addUserRequest(@RequestBody @Valid AddUserRequest addUserRequest) {
-        userService.addUser(addUserRequest);
+        userService.add(addUserRequest);
     }
 
     @PutMapping
     private void updateUserRequest(@RequestBody @Valid UpdateUserRequest updateUserRequest) {
-        userService.updateUser(updateUserRequest);
+        userService.update(updateUserRequest);
     }
 
     @DeleteMapping
     private void deleteUserRequest(@RequestBody @Valid DeleteUserRequest deleteUserRequest) {
-        userService.deleteUser(deleteUserRequest);
+        userService.delete(deleteUserRequest);
     }
 }

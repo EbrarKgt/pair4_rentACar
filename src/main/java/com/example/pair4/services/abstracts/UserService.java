@@ -14,11 +14,11 @@ public interface UserService {
 
     GetByIdResponse getByIdResponse(int id);
 
-    void addUser(AddUserRequest addUserRequest);
+    void add(AddUserRequest addUserRequest);
 
-    void updateUser(UpdateUserRequest updateUserRequest);
+    void update(UpdateUserRequest updateUserRequest);
 
-    void deleteUser(DeleteUserRequest deleteUserRequest);
+    void delete(DeleteUserRequest deleteUserRequest);
 
     User getById(int id);  //isimlendirilmesine bakılsın
 }
