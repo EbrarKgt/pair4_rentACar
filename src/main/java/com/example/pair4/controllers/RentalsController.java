@@ -1,11 +1,11 @@
 package com.example.pair4.controllers;
 
 import com.example.pair4.services.abstracts.RentalService;
-import com.example.pair4.services.dtos.rent.requests.AddRentRequest;
-import com.example.pair4.services.dtos.rent.requests.DeleteRentRequest;
-import com.example.pair4.services.dtos.rent.requests.UpdateRentRequest;
-import com.example.pair4.services.dtos.rent.responses.GetAllRentResponse;
-import com.example.pair4.services.dtos.rent.responses.GetRentByIdResponse;
+import com.example.pair4.services.dtos.rental.requests.AddRentalRequest;
+import com.example.pair4.services.dtos.rental.requests.DeleteRentalRequest;
+import com.example.pair4.services.dtos.rental.requests.UpdateRentalRequest;
+import com.example.pair4.services.dtos.rental.responses.GetAllRentalResponse;
+import com.example.pair4.services.dtos.rental.responses.GetRentalByIdResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -20,27 +20,27 @@ public class RentalsController {
     private final RentalService rentalService;
 
     @PostMapping
-    private void add(@RequestBody @Valid AddRentRequest addRentRequest) {
-        rentalService.add(addRentRequest);
+    private void add(@RequestBody @Valid AddRentalRequest addRentalRequest) {
+        rentalService.add(addRentalRequest);
     }
 
     @DeleteMapping
-    private void delete(@RequestBody @Valid DeleteRentRequest deleteRentRequest) {
-        rentalService.delete(deleteRentRequest);
+    private void delete(@RequestBody @Valid DeleteRentalRequest deleteRentalRequest) {
+        rentalService.delete(deleteRentalRequest);
     }
 
     @PutMapping
-    private void update(@RequestBody @Valid UpdateRentRequest updateRentRequest) {
-        rentalService.update(updateRentRequest);
+    private void update(@RequestBody @Valid UpdateRentalRequest updateRentalRequest) {
+        rentalService.update(updateRentalRequest);
     }
 
     @GetMapping
-    private List<GetAllRentResponse> getAll() {
+    private List<GetAllRentalResponse> getAll() {
         return rentalService.getAll();
     }
 
     @GetMapping("{id}")
-    private GetRentByIdResponse getById(@PathVariable int id) {
+    private GetRentalByIdResponse getById(@PathVariable int id) {
         return rentalService.getByIdResponse(id);
     }
 }

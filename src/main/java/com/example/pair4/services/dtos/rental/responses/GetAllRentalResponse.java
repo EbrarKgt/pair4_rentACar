@@ -1,4 +1,4 @@
-package com.example.pair4.services.dtos.rent.responses;
+package com.example.pair4.services.dtos.rental.responses;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetAllRentResponse {
+public class GetAllRentalResponse {
 
     private LocalDate startDate;
     private LocalDate endDate;

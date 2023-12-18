@@ -7,11 +7,11 @@ import com.example.pair4.repositories.RentalRepository;
 import com.example.pair4.services.abstracts.CarService;
 import com.example.pair4.services.abstracts.RentalService;
 import com.example.pair4.services.abstracts.UserService;
-import com.example.pair4.services.dtos.rent.requests.AddRentRequest;
-import com.example.pair4.services.dtos.rent.requests.DeleteRentRequest;
-import com.example.pair4.services.dtos.rent.requests.UpdateRentRequest;
-import com.example.pair4.services.dtos.rent.responses.GetAllRentResponse;
-import com.example.pair4.services.dtos.rent.responses.GetRentByIdResponse;
+import com.example.pair4.services.dtos.rental.requests.AddRentalRequest;
+import com.example.pair4.services.dtos.rental.requests.DeleteRentalRequest;
+import com.example.pair4.services.dtos.rental.requests.UpdateRentalRequest;
+import com.example.pair4.services.dtos.rental.responses.GetAllRentalResponse;
+import com.example.pair4.services.dtos.rental.responses.GetRentalByIdResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,25 +28,25 @@ public class RentalManager implements RentalService {
     private final ModelMapperService modelMapperService;
 
     @Override
-    public void add(AddRentRequest addRentRequest) {
+    public void add(AddRentalRequest addRentalRequest) {
 
-        if(addRentRequest.getEndDate().isBefore(addRentRequest.getStartDate())){
+        if (addRentalRequest.getEndDate().isBefore(addRentalRequest.getStartDate())) {
             throw new RuntimeException("The end date cannot be later than the start date.");
         }
 
-        long totalRentDay = ChronoUnit.DAYS.between(addRentRequest.getStartDate(),addRentRequest.getEndDate());
+        long totalRentDay = ChronoUnit.DAYS.between(addRentalRequest.getStartDate(), addRentalRequest.getEndDate());
 
-        if(totalRentDay > 25){
+        if (totalRentDay > 25) {
             throw new RuntimeException("A vehicle can be rented for a maximum of 25 days.");
         }
 
         //Check is there anything corresponding to this id?
-        carService.getById(addRentRequest.getCarId());
-        userService.getById(addRentRequest.getUserId());
+        carService.getById(addRentalRequest.getCarId());
+        userService.getById(addRentalRequest.getUserId());
 
-        Rental rental = this.modelMapperService.forRequest().map(addRentRequest, Rental.class);
+        Rental rental = this.modelMapperService.forRequest().map(addRentalRequest, Rental.class);
 
-        Car car = carService.getById(addRentRequest.getCarId());
+        Car car = carService.getById(addRentalRequest.getCarId());
         rental.setStartKilometer(car.getKilometer());
         rental.setTotalPrice(totalRentDay * car.getDailyPrice());
 
@@ -55,29 +55,29 @@ public class RentalManager implements RentalService {
     }
 
     @Override
-    public void delete(DeleteRentRequest deleteRentRequest) {
-        Rental rentalToDelete = rentalRepository.findById(deleteRentRequest.getId()).orElseThrow();
+    public void delete(DeleteRentalRequest deleteRentalRequest) {
+        Rental rentalToDelete = rentalRepository.findById(deleteRentalRequest.getId()).orElseThrow();
         rentalRepository.delete(rentalToDelete);
     }
 
     @Override
-    public void update(UpdateRentRequest updateRentRequest) {
-        if(updateRentRequest.getEndDate().isBefore(updateRentRequest.getStartDate())){
+    public void update(UpdateRentalRequest updateRentalRequest) {
+        if (updateRentalRequest.getEndDate().isBefore(updateRentalRequest.getStartDate())) {
             throw new RuntimeException("The end date cannot be later than the start date.");
         }
 
-        long totalRentDay = ChronoUnit.DAYS.between(updateRentRequest.getStartDate(),updateRentRequest.getEndDate());
+        long totalRentDay = ChronoUnit.DAYS.between(updateRentalRequest.getStartDate(), updateRentalRequest.getEndDate());
 
-        if(totalRentDay > 25){
+        if (totalRentDay > 25) {
             throw new RuntimeException("A vehicle can be rented for a maximum of 25 days.");
         }
         //Check is there anything corresponding to this id?
-        carService.getById(updateRentRequest.getCarId());
-        userService.getById(updateRentRequest.getUserId());
+        carService.getById(updateRentalRequest.getCarId());
+        userService.getById(updateRentalRequest.getUserId());
 
-        Rental rentalToUpdate = this.modelMapperService.forRequest().map(updateRentRequest, Rental.class);
+        Rental rentalToUpdate = this.modelMapperService.forRequest().map(updateRentalRequest, Rental.class);
 
-        Car car = carService.getById(updateRentRequest.getCarId());
+        Car car = carService.getById(updateRentalRequest.getCarId());
         rentalToUpdate.setStartKilometer(car.getKilometer());
         rentalToUpdate.setTotalPrice(totalRentDay * car.getDailyPrice());
 
@@ -85,22 +85,22 @@ public class RentalManager implements RentalService {
     }
 
     @Override
-    public List<GetAllRentResponse> getAll() {
+    public List<GetAllRentalResponse> getAll() {
         List<Rental> rentals = rentalRepository.findAll();
-        List<GetAllRentResponse> rentResponses = rentals.stream()
-                .map(rental -> this.modelMapperService.forResponse().map(rental,GetAllRentResponse.class))
+        List<GetAllRentalResponse> rentResponses = rentals.stream()
+                .map(rental -> this.modelMapperService.forResponse().map(rental, GetAllRentalResponse.class))
                 .toList();
 
         return rentResponses;
     }
 
     @Override
-    public GetRentByIdResponse getByIdResponse(int id) {
+    public GetRentalByIdResponse getByIdResponse(int id) {
         Rental rental = rentalRepository.findById(id).orElseThrow();
-        GetRentByIdResponse getRentByIdResponse = this.modelMapperService.forResponse()
-                .map(rental, GetRentByIdResponse.class);
+        GetRentalByIdResponse getRentalByIdResponse = this.modelMapperService.forResponse()
+                .map(rental, GetRentalByIdResponse.class);
 
-        return getRentByIdResponse;
+        return getRentalByIdResponse;
     }
 
     @Override

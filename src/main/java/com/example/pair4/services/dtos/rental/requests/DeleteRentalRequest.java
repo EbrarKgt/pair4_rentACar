@@ -1,4 +1,4 @@
-package com.example.pair4.services.dtos.rent.requests;
+package com.example.pair4.services.dtos.rental.requests;
 
 import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DeleteRentRequest {
+public class DeleteRentalRequest {
 
     @Positive(message = "Enter a value greater than 0.")
     private int id;

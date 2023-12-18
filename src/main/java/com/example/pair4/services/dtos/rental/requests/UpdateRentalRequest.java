@@ -1,4 +1,4 @@
-package com.example.pair4.services.dtos.rent.requests;
+package com.example.pair4.services.dtos.rental.requests;
 
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.Positive;
@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UpdateRentRequest {
+public class UpdateRentalRequest {
 
     @Positive(message = "Enter a value greater than 0.")
     private int id;
