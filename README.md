@@ -2,7 +2,7 @@
 
 ![2a5ca270f25420e79e29802cc8a3bfed.jpeg](https://imgtr.ee/images/2023/12/15/2a5ca270f25420e79e29802cc8a3bfed.jpeg)
 
-## About Project
+## About The Project
 This project is a web-based car rental service.
 Its current features are listed below.  
 
@@ -24,7 +24,7 @@ Its current features are listed below.
 [![c98ab75aa4b9cecb91329ced519a5e2b.png](https://imgtr.ee/images/2023/12/15/c98ab75aa4b9cecb91329ced519a5e2b.png)](https://imgtr.ee/image/IqbBIm)
 
 
-## Collabrators
+## Collaborators
 [Ebrar KAĞIT](https://github.com/EbrarKgt)  
 [Emre YILDIRIM](https://github.com/emreyldrm)    
 [Sema ŞAHİNBAY](https://github.com/semasahinbay)  
