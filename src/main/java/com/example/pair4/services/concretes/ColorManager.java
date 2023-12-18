@@ -1,13 +1,10 @@
+
 package com.example.pair4.services.concretes;
 
 import com.example.pair4.core.utilities.mappers.ModelMapperService;
-import com.example.pair4.entities.Car;
 import com.example.pair4.entities.Color;
 import com.example.pair4.repositories.ColorRepository;
 import com.example.pair4.services.abstracts.ColorService;
-import com.example.pair4.services.dtos.car.requests.DeleteCarRequest;
-import com.example.pair4.services.dtos.car.responses.GetAllCarResponse;
-import com.example.pair4.services.dtos.car.responses.GetByIdResponse;
 import com.example.pair4.services.dtos.color.requests.AddColorRequest;
 import com.example.pair4.services.dtos.color.requests.DeleteColorRequest;
 import com.example.pair4.services.dtos.color.requests.UpdateColorRequest;
@@ -76,4 +73,5 @@ public class ColorManager implements ColorService {
 
 
 }
+
 

@@ -42,6 +42,6 @@ public class CarsController {
 
     @GetMapping("{id}")
     private GetByIdResponse getById(@PathVariable int id) {
-        return carService.getById(id);
+        return carService.getByIdResponse(id);
     }
 }

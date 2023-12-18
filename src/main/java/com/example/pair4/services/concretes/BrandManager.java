@@ -1,3 +1,4 @@
+
 package com.example.pair4.services.concretes;
 
 import com.example.pair4.core.utilities.mappers.ModelMapperService;
@@ -9,7 +10,6 @@ import com.example.pair4.services.dtos.brand.requests.DeleteBrandRequest;
 import com.example.pair4.services.dtos.brand.requests.UpdateBrandRequest;
 import com.example.pair4.services.dtos.brand.responses.GetAllBrandResponse;
 import com.example.pair4.services.dtos.brand.responses.GetByIdBrandResponse;
-import com.example.pair4.services.dtos.car.responses.GetByIdResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -68,3 +68,4 @@ public class BrandManager implements BrandService {
         return getByIdBrandResponse;
     }
 }
+

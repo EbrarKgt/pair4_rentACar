@@ -17,3 +17,4 @@ public class AddColorRequest {
 >>>>>>> refs/remotes/origin/main
     private String colorName;
 }
+

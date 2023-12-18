@@ -1,7 +1,7 @@
+
 package com.example.pair4.controllers;
 
 import com.example.pair4.services.abstracts.ColorService;
-import com.example.pair4.services.dtos.car.responses.GetByIdResponse;
 import com.example.pair4.services.dtos.color.requests.AddColorRequest;
 import com.example.pair4.services.dtos.color.requests.DeleteColorRequest;
 import com.example.pair4.services.dtos.color.requests.UpdateColorRequest;
@@ -46,3 +46,4 @@ public class ColorsController {
         return colorService.getByIdColorResponse(id);
     }
 }
+
