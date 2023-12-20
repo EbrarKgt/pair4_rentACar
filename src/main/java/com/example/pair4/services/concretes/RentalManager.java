@@ -55,12 +55,6 @@ public class RentalManager implements RentalService {
     }
 
     @Override
-    public void delete(DeleteRentalRequest deleteRentalRequest) {
-        Rental rentalToDelete = rentalRepository.findById(deleteRentalRequest.getId()).orElseThrow();
-        rentalRepository.delete(rentalToDelete);
-    }
-
-    @Override
     public void update(UpdateRentalRequest updateRentalRequest) {
         if (updateRentalRequest.getEndDate().isBefore(updateRentalRequest.getStartDate())) {
             throw new RuntimeException("The end date cannot be later than the start date.");
@@ -82,6 +76,12 @@ public class RentalManager implements RentalService {
         rentalToUpdate.setTotalPrice(totalRentDay * car.getDailyPrice());
 
         rentalRepository.save(rentalToUpdate);
+    }
+
+    @Override
+    public void delete(DeleteRentalRequest deleteRentalRequest) {
+        Rental rentalToDelete = rentalRepository.findById(deleteRentalRequest.getId()).orElseThrow();
+        rentalRepository.delete(rentalToDelete);
     }
 
     @Override
