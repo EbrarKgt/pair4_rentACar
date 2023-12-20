@@ -24,7 +24,7 @@ public class BrandManager implements BrandService {
     @Override
     public void add(AddBrandRequest addBrandRequest) {
 
-        if (brandRepository.existsBrandByName(addBrandRequest.getBrandName())) {
+        if (brandRepository.existsBrandByName(addBrandRequest.getName())) {
             throw new RuntimeException("The same brand cannot be registered twice.");
         }
 

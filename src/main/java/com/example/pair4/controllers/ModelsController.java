@@ -2,6 +2,7 @@ package com.example.pair4.controllers;
 
 import com.example.pair4.services.abstracts.ModelService;
 import com.example.pair4.services.dtos.model.requests.AddModelRequest;
+import com.example.pair4.services.dtos.model.requests.DeleteModelRequest;
 import com.example.pair4.services.dtos.model.requests.UpdateModelRequest;
 import com.example.pair4.services.dtos.model.responses.GetAllModelResponse;
 import com.example.pair4.services.dtos.model.responses.GetModelByIdResponse;
@@ -22,14 +23,14 @@ public class ModelsController {
         modelService.add(addModelRequest);
     }
 
+    @DeleteMapping
+    public void delete(@PathVariable DeleteModelRequest deleteModelRequest) {
+        modelService.delete(deleteModelRequest);
+    }
+
     @PutMapping
     private void update(@RequestBody @Valid UpdateModelRequest updateModelRequest) {
         modelService.update(updateModelRequest);
-    }
-
-    @DeleteMapping
-    public void delete(@PathVariable Integer id) {
-        modelService.delete(id);
     }
 
     @GetMapping("get-all-models")

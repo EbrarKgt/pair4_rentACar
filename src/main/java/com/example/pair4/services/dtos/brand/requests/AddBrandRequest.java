@@ -10,5 +10,5 @@ import org.hibernate.validator.constraints.Length;
 @NoArgsConstructor
 public class AddBrandRequest {
     @Length(min = 2, message = "The brand name must have a minimum length of 2 letters.")
-    private String brandName;
+    private String name;
 }

@@ -6,6 +6,7 @@ import com.example.pair4.repositories.ModelRepository;
 import com.example.pair4.services.abstracts.BrandService;
 import com.example.pair4.services.abstracts.ModelService;
 import com.example.pair4.services.dtos.model.requests.AddModelRequest;
+import com.example.pair4.services.dtos.model.requests.DeleteModelRequest;
 import com.example.pair4.services.dtos.model.requests.UpdateModelRequest;
 import com.example.pair4.services.dtos.model.responses.GetAllModelResponse;
 import com.example.pair4.services.dtos.model.responses.GetModelByIdResponse;
@@ -45,23 +46,23 @@ public class ModelManager implements ModelService {
 
         brandService.getById(updateModelRequest.getBrandId());
 
-        Model model = this.modelMapperService.forRequest().map(updateModelRequest, Model.class);
-        this.modelRepository.save(model);
+        Model modelToUpdate = this.modelMapperService.forRequest().map(updateModelRequest, Model.class);
+        this.modelRepository.save(modelToUpdate);
 
     }
 
     @Override
-    public void delete(Integer id) {
+    public void delete(DeleteModelRequest deleteModelRequest) {
 
-        Model modelToDelete = this.modelRepository.findById(id).orElseThrow();
-        this.modelRepository.deleteById(id);
+        Model modelToDelete = modelRepository.findById(deleteModelRequest.getId()).orElseThrow();
+        modelRepository.delete(modelToDelete);
     }
 
     @Override
     public List<GetAllModelResponse> getAll() {
 
-        List<Model> modelList = modelRepository.findAll();
-        List<GetAllModelResponse> modelResponses = modelList.stream()
+        List<Model> models = modelRepository.findAll();
+        List<GetAllModelResponse> modelResponses = models.stream()
                 .map(model -> this.modelMapperService.forResponse().map(model, GetAllModelResponse.class)).toList();
         return modelResponses;
     }
@@ -70,8 +71,8 @@ public class ModelManager implements ModelService {
     public GetModelByIdResponse getModelByIdResponse(int id) {
 
         Model model = modelRepository.findById(id).orElseThrow();
-        GetModelByIdResponse response = this.modelMapperService.forResponse().map(model, GetModelByIdResponse.class);
-        return response;
+        GetModelByIdResponse getModelByIdResponse = this.modelMapperService.forResponse().map(model, GetModelByIdResponse.class);
+        return getModelByIdResponse;
 
     }
 

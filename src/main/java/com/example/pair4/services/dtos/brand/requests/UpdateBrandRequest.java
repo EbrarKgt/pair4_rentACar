@@ -12,6 +12,6 @@ public class UpdateBrandRequest {
 
     private int id;
     @Length(min = 2, message = "The brand name must have a minimum length of 2 letters.")
-    private String brandName;
+    private String name;
 
 }

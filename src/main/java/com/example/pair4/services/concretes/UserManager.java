@@ -23,8 +23,8 @@ public class UserManager implements UserService {
 
     @Override
     public void add(AddUserRequest addUserRequest) {
-        User userToAdd = this.modelMapperService.forRequest().map(addUserRequest, User.class);
-        this.userRepository.save(userToAdd);
+        User user = this.modelMapperService.forRequest().map(addUserRequest, User.class);
+        this.userRepository.save(user);
     }
 
     @Override

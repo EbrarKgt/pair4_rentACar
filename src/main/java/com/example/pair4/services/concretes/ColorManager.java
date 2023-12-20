@@ -27,7 +27,7 @@ public class ColorManager implements ColorService {
     @Override
     public void add(AddColorRequest addColorRequest) {
 
-        if (colorRepository.existsColorByName(addColorRequest.getColorName())) {
+        if (colorRepository.existsColorByName(addColorRequest.getName())) {
             throw new RuntimeException("The same color cannot be registered twice.");
         }
 
