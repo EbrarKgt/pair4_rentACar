@@ -26,22 +26,26 @@ public class ModelManager implements ModelService {
 
     @Override
     public void add(AddModelRequest addModelRequest) {
-        if (!brandService.existsByBrandId(addModelRequest.getBrandId())) {
-            throw new RuntimeException("Db'de olan bir brand id giriniz");
+        if (modelRepository.existsModelByName(addModelRequest.getName())) {
+            throw new RuntimeException("The same model name cannot be registered twice.");
         }
 
-        if (modelRepository.existsModelByName(addModelRequest.getName())) {
-            throw new RuntimeException("Bu Modelin aynısı zaten var");
-        }
+        brandService.getById(addModelRequest.getBrandId());
 
         Model model = this.modelMapperService.forRequest().map(addModelRequest, Model.class);
-        //model.setId(0);
         this.modelRepository.save(model);
 
     }
 
     @Override
     public void update(UpdateModelRequest updateModelRequest) {
+
+        if (modelRepository.existsModelByName(updateModelRequest.getName())) {
+            throw new RuntimeException("The same model name cannot be registered twice.");
+        }
+
+        brandService.getById(updateModelRequest.getBrandId());
+
         Model model = this.modelMapperService.forRequest().map(updateModelRequest, Model.class);
         this.modelRepository.save(model);
 
@@ -64,7 +68,7 @@ public class ModelManager implements ModelService {
     }
 
     @Override
-    public GetModelByIdResponse getById(int id) {
+    public GetModelByIdResponse getModelByIdResponse(int id) {
 
         Model model = modelRepository.findById(id).orElseThrow();
         GetModelByIdResponse response = this.modelMapperService.forResponse().map(model, GetModelByIdResponse.class);
@@ -73,7 +77,8 @@ public class ModelManager implements ModelService {
     }
 
     @Override
-    public boolean getModelById(int id) {
-        return modelRepository.existsById(id);
+    public Model getById(int id) {
+        return modelRepository.findById(id).orElseThrow(() -> new RuntimeException("There is no model with this id!"));
     }
+
 }

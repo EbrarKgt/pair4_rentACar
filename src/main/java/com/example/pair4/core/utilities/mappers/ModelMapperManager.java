@@ -29,11 +29,16 @@ public class ModelMapperManager implements ModelMapperService {
                 .setMatchingStrategy(MatchingStrategies.STANDARD);
 
 
-        TypeMap<AddModelRequest, Model> typeMap = this.modelMapper.createTypeMap(AddModelRequest.class, Model.class);
+        // Check if the TypeMap already exists
+        TypeMap<AddModelRequest, Model> typeMap = this.modelMapper.getTypeMap(AddModelRequest.class, Model.class);
 
-        // Explicitly skip mapping the 'id' field
-        typeMap.addMappings(mapper -> mapper.skip(Model::setId));
+        // If the TypeMap doesn't exist, create a new one
+        if (typeMap == null) {
+            typeMap = this.modelMapper.createTypeMap(AddModelRequest.class, Model.class);
 
+            // Explicitly skip mapping the 'id' field
+            typeMap.addMappings(mapper -> mapper.skip(Model::setId));
+        }
         return this.modelMapper;
     }
 }

@@ -5,7 +5,7 @@ import com.example.pair4.services.dtos.car.requests.AddCarRequest;
 import com.example.pair4.services.dtos.car.requests.DeleteCarRequest;
 import com.example.pair4.services.dtos.car.requests.UpdateCarRequest;
 import com.example.pair4.services.dtos.car.responses.GetAllCarResponse;
-import com.example.pair4.services.dtos.car.responses.GetByIdResponse;
+import com.example.pair4.services.dtos.car.responses.GetCarByIdResponse;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public interface CarService {
     void update(UpdateCarRequest updateCarRequest);
     void delete(DeleteCarRequest deleteCarRequest);
     List<GetAllCarResponse> getAll();
-    GetByIdResponse getByIdResponse(int id);
+    GetCarByIdResponse getCarByIdResponse(int id);
     Car getById(int id);
 
 }

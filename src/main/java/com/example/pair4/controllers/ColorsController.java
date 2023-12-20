@@ -6,7 +6,7 @@ import com.example.pair4.services.dtos.color.requests.AddColorRequest;
 import com.example.pair4.services.dtos.color.requests.DeleteColorRequest;
 import com.example.pair4.services.dtos.color.requests.UpdateColorRequest;
 import com.example.pair4.services.dtos.color.responses.GetAllColorResponse;
-import com.example.pair4.services.dtos.color.responses.GetByIdColorResponse;
+import com.example.pair4.services.dtos.color.responses.GetColorByIdResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -20,9 +20,8 @@ public class ColorsController {
 
     private final ColorService colorService;
 
-    @PostMapping
+    @PostMapping("add")
     private void add(@RequestBody @Valid AddColorRequest addColorRequest) {
-
         colorService.add(addColorRequest);
     }
 
@@ -35,15 +34,14 @@ public class ColorsController {
     private void update(@RequestBody @Valid UpdateColorRequest updateColorRequest) {
         colorService.update(updateColorRequest);
     }
-
-    @GetMapping
+    @GetMapping("get-all-colors")
     private List<GetAllColorResponse> getAll() {
         return colorService.getAll();
     }
 
-    @GetMapping("{id}")
-    private GetByIdColorResponse getByIdColorResponse(@PathVariable int id) {
-        return colorService.getByIdColorResponse(id);
+    @GetMapping("/get/{id}")
+    private GetColorByIdResponse getByIdResponse(@PathVariable int id) {
+        return colorService.getColorByIdResponse(id);
     }
 }
 

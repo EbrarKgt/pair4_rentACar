@@ -8,7 +8,7 @@ import com.example.pair4.services.dtos.user.requests.AddUserRequest;
 import com.example.pair4.services.dtos.user.requests.DeleteUserRequest;
 import com.example.pair4.services.dtos.user.requests.UpdateUserRequest;
 import com.example.pair4.services.dtos.user.responses.GetAllUserResponse;
-import com.example.pair4.services.dtos.user.responses.GetByIdResponse;
+import com.example.pair4.services.dtos.user.responses.GetUserByIdResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,22 +20,6 @@ public class UserManager implements UserService {
     private final UserRepository userRepository;
     private ModelMapperService modelMapperService;
 
-    @Override
-    public List<GetAllUserResponse> getAll() {
-        List<User> users = userRepository.findAll();
-        List<GetAllUserResponse> userResponses = users.stream()
-                .map(user -> this.modelMapperService.forResponse()
-                        .map(user, GetAllUserResponse.class))
-                        .toList();
-        return userResponses;
-    }
-
-    @Override
-    public GetByIdResponse getByIdResponse(int id) {
-        User user = this.userRepository.findById(id).orElseThrow();
-        GetByIdResponse getByIdResponse = this.modelMapperService.forResponse().map(user, GetByIdResponse.class);
-        return getByIdResponse;
-    }
 
     @Override
     public void add(AddUserRequest addUserRequest) {
@@ -53,6 +37,23 @@ public class UserManager implements UserService {
     public void delete(DeleteUserRequest deleteUserRequest) {
         User userToDelete = this.userRepository.findById(deleteUserRequest.getId()).orElseThrow();
         this.userRepository.delete(userToDelete);
+    }
+
+    @Override
+    public List<GetAllUserResponse> getAll() {
+        List<User> users = userRepository.findAll();
+        List<GetAllUserResponse> userResponses = users.stream()
+                .map(user -> this.modelMapperService.forResponse()
+                        .map(user, GetAllUserResponse.class))
+                .toList();
+        return userResponses;
+    }
+
+    @Override
+    public GetUserByIdResponse getUserByIdResponse(int id) {
+        User user = this.userRepository.findById(id).orElseThrow();
+        GetUserByIdResponse getUserByIdResponse = this.modelMapperService.forResponse().map(user, GetUserByIdResponse.class);
+        return getUserByIdResponse;
     }
 
     @Override

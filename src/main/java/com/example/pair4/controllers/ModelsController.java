@@ -27,18 +27,18 @@ public class ModelsController {
         modelService.update(updateModelRequest);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping
     public void delete(@PathVariable Integer id) {
         modelService.delete(id);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("get-all-models")
     public List<GetAllModelResponse> getAll() {
         return modelService.getAll();
     }
 
     @GetMapping("/get/{id}")
-    public GetModelByIdResponse getById(@PathVariable int id) {
-        return modelService.getById(id);
+    public GetModelByIdResponse getByIdResponse(@PathVariable int id) {
+        return modelService.getModelByIdResponse(id);
     }
 }

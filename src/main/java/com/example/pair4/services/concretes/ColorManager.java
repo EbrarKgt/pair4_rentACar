@@ -9,7 +9,7 @@ import com.example.pair4.services.dtos.color.requests.AddColorRequest;
 import com.example.pair4.services.dtos.color.requests.DeleteColorRequest;
 import com.example.pair4.services.dtos.color.requests.UpdateColorRequest;
 import com.example.pair4.services.dtos.color.responses.GetAllColorResponse;
-import com.example.pair4.services.dtos.color.responses.GetByIdColorResponse;
+import com.example.pair4.services.dtos.color.responses.GetColorByIdResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,11 +22,6 @@ public class ColorManager implements ColorService {
 
     private final ColorRepository colorRepository;
     private final ModelMapperService modelMapperService;
-
-    @Override
-    public Color getById(int id) {
-        return colorRepository.findById(id).orElseThrow(() -> new RuntimeException("There is no color with this id!"));
-    }
 
 
     @Override
@@ -62,15 +57,16 @@ public class ColorManager implements ColorService {
     }
 
 
-    public GetByIdColorResponse getByIdColorResponse(int id) {
+    public GetColorByIdResponse getColorByIdResponse(int id) {
         Color color = this.colorRepository.findById(id).orElseThrow();
-        GetByIdColorResponse getByIdColorResponse = this.modelMapperService.forResponse()
-                .map(color,GetByIdColorResponse.class);
-        return getByIdColorResponse;
+        GetColorByIdResponse getColorByIdResponse = this.modelMapperService.forResponse()
+                .map(color, GetColorByIdResponse.class);
+        return getColorByIdResponse;
     }
-
-
-
+    @Override
+    public Color getById(int id) {
+        return colorRepository.findById(id).orElseThrow(() -> new RuntimeException("There is no color with this id!"));
+    }
 
 }
 

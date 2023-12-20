@@ -10,11 +10,10 @@ import com.example.pair4.services.dtos.rental.responses.GetRentalByIdResponse;
 import java.util.List;
 
 public interface RentalService {
-
     void add(AddRentalRequest addRentalRequest);
     void delete(DeleteRentalRequest deleteRentalRequest);
     void update(UpdateRentalRequest updateRentalRequest);
     List<GetAllRentalResponse> getAll();
-    GetRentalByIdResponse getByIdResponse(int id);
+    GetRentalByIdResponse getRentalByIdResponse(int id);
     Rental getById(int id);
 }

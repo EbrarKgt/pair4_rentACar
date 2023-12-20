@@ -5,8 +5,7 @@ import com.example.pair4.services.dtos.brand.requests.AddBrandRequest;
 import com.example.pair4.services.dtos.brand.requests.DeleteBrandRequest;
 import com.example.pair4.services.dtos.brand.requests.UpdateBrandRequest;
 import com.example.pair4.services.dtos.brand.responses.GetAllBrandResponse;
-import com.example.pair4.services.dtos.brand.responses.GetByIdBrandResponse;
-import com.example.pair4.services.dtos.car.responses.GetByIdResponse;
+import com.example.pair4.services.dtos.brand.responses.GetBrandByIdResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -19,9 +18,8 @@ import java.util.List;
 public class BrandsController {
     private final BrandService brandService;
 
-    @PostMapping
+    @PostMapping("add")
     private void add(@RequestBody @Valid AddBrandRequest addBrandRequest) {
-
         brandService.add(addBrandRequest);
     }
 
@@ -35,13 +33,13 @@ public class BrandsController {
         brandService.update(updateBrandRequest);
     }
 
-    @GetMapping
+    @GetMapping("get-all-brands")
     private List<GetAllBrandResponse> getAll() {
         return brandService.getAll();
     }
 
-    @GetMapping("{id}")
-    private GetByIdBrandResponse getById(@PathVariable int id) {
-        return brandService.getByIdBrandResponse(id);
+    @GetMapping("/get/{id}")
+    private GetBrandByIdResponse getByIdResponse(@PathVariable int id) {
+        return brandService.getBrandByIdResponse(id);
     }
 }

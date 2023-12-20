@@ -5,7 +5,7 @@ import com.example.pair4.services.dtos.car.requests.AddCarRequest;
 import com.example.pair4.services.dtos.car.requests.DeleteCarRequest;
 import com.example.pair4.services.dtos.car.requests.UpdateCarRequest;
 import com.example.pair4.services.dtos.car.responses.GetAllCarResponse;
-import com.example.pair4.services.dtos.car.responses.GetByIdResponse;
+import com.example.pair4.services.dtos.car.responses.GetCarByIdResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +20,7 @@ public class CarsController {
 
     private final CarService carService;
 
-    @PostMapping
+    @PostMapping("add")
     private void add(@RequestBody @Valid AddCarRequest addCarRequest) {
         carService.add(addCarRequest);
     }
@@ -35,13 +35,13 @@ public class CarsController {
         carService.update(updateCarRequest);
     }
 
-    @GetMapping
+    @GetMapping("get-all-cars")
     private List<GetAllCarResponse> getAll() {
         return carService.getAll();
     }
 
-    @GetMapping("{id}")
-    private GetByIdResponse getById(@PathVariable int id) {
-        return carService.getByIdResponse(id);
+    @GetMapping("/get/{id}")
+    private GetCarByIdResponse getByIdResponse(@PathVariable int id) {
+        return carService.getCarByIdResponse(id);
     }
 }

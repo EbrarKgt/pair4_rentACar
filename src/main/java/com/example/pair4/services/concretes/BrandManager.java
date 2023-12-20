@@ -9,7 +9,7 @@ import com.example.pair4.services.dtos.brand.requests.AddBrandRequest;
 import com.example.pair4.services.dtos.brand.requests.DeleteBrandRequest;
 import com.example.pair4.services.dtos.brand.requests.UpdateBrandRequest;
 import com.example.pair4.services.dtos.brand.responses.GetAllBrandResponse;
-import com.example.pair4.services.dtos.brand.responses.GetByIdBrandResponse;
+import com.example.pair4.services.dtos.brand.responses.GetBrandByIdResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,16 +20,6 @@ import java.util.List;
 public class BrandManager implements BrandService {
     private final BrandRepository brandRepository;
     private final ModelMapperService modelMapperService;
-
-    @Override
-    public Brand getById(int id) {
-        return brandRepository.findById(id).orElseThrow(() -> new RuntimeException("There is no brand with this id!"));
-    }
-
-    @Override
-    public boolean existsByBrandId(int brandId) {
-        return false;
-    }
 
     @Override
     public void add(AddBrandRequest addBrandRequest) {
@@ -64,11 +54,16 @@ public class BrandManager implements BrandService {
     }
 
 
-    public GetByIdBrandResponse getByIdBrandResponse(int id) {
+    public GetBrandByIdResponse getBrandByIdResponse(int id) {
         Brand brand = this.brandRepository.findById(id).orElseThrow();
-        GetByIdBrandResponse getByIdBrandResponse = this.modelMapperService.forResponse()
-                .map(brand,GetByIdBrandResponse.class);
-        return getByIdBrandResponse;
+        GetBrandByIdResponse getBrandByIdResponse = this.modelMapperService.forResponse()
+                .map(brand, GetBrandByIdResponse.class);
+        return getBrandByIdResponse;
+    }
+
+    @Override
+    public Brand getById(int id) {
+        return brandRepository.findById(id).orElseThrow(() -> new RuntimeException("There is no brand with this id!"));
     }
 }
 

@@ -95,7 +95,7 @@ public class RentalManager implements RentalService {
     }
 
     @Override
-    public GetRentalByIdResponse getByIdResponse(int id) {
+    public GetRentalByIdResponse getRentalByIdResponse(int id) {
         Rental rental = rentalRepository.findById(id).orElseThrow();
         GetRentalByIdResponse getRentalByIdResponse = this.modelMapperService.forResponse()
                 .map(rental, GetRentalByIdResponse.class);
@@ -105,7 +105,7 @@ public class RentalManager implements RentalService {
 
     @Override
     public Rental getById(int id) {
-        return rentalRepository.findById(id).orElseThrow(() -> new RuntimeException("There is no car with this id!"));
+        return rentalRepository.findById(id).orElseThrow(() -> new RuntimeException("There is no rental with this id!"));
     }
 
 }

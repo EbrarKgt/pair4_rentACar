@@ -6,19 +6,17 @@ import com.example.pair4.services.dtos.color.requests.AddColorRequest;
 import com.example.pair4.services.dtos.color.requests.DeleteColorRequest;
 import com.example.pair4.services.dtos.color.requests.UpdateColorRequest;
 import com.example.pair4.services.dtos.color.responses.GetAllColorResponse;
-import com.example.pair4.services.dtos.color.responses.GetByIdColorResponse;
+import com.example.pair4.services.dtos.color.responses.GetColorByIdResponse;
 
 import java.util.List;
 
 public interface ColorService {
-
-    Color getById(int id); //isimlendirmesine bakılsın
-
     void add(AddColorRequest addColorRequest);
     void update(UpdateColorRequest updateColorRequest);
     void delete(DeleteColorRequest deleteColorRequest);
     List<GetAllColorResponse> getAll();
-    GetByIdColorResponse getByIdColorResponse(int id);
+    GetColorByIdResponse getColorByIdResponse(int id);
+    Color getById(int id);
 
 
 }

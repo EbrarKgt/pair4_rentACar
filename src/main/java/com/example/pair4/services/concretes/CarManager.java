@@ -10,7 +10,7 @@ import com.example.pair4.services.dtos.car.requests.AddCarRequest;
 import com.example.pair4.services.dtos.car.requests.DeleteCarRequest;
 import com.example.pair4.services.dtos.car.requests.UpdateCarRequest;
 import com.example.pair4.services.dtos.car.responses.GetAllCarResponse;
-import com.example.pair4.services.dtos.car.responses.GetByIdResponse;
+import com.example.pair4.services.dtos.car.responses.GetCarByIdResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -60,11 +60,11 @@ public class CarManager implements CarService {
     }
 
     @Override
-    public GetByIdResponse getByIdResponse(int id) {
+    public GetCarByIdResponse getCarByIdResponse(int id) {
         Car car = this.carRepository.findById(id).orElseThrow();
-        GetByIdResponse getByIdResponse = this.modelMapperService.forResponse()
-                .map(car, GetByIdResponse.class);
-        return getByIdResponse;
+        GetCarByIdResponse getCarByIdResponse = this.modelMapperService.forResponse()
+                .map(car, GetCarByIdResponse.class);
+        return getCarByIdResponse;
     }
 
     @Override

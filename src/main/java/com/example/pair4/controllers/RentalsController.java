@@ -19,7 +19,7 @@ public class RentalsController {
 
     private final RentalService rentalService;
 
-    @PostMapping
+    @PostMapping("add")
     private void add(@RequestBody @Valid AddRentalRequest addRentalRequest) {
         rentalService.add(addRentalRequest);
     }
@@ -34,13 +34,13 @@ public class RentalsController {
         rentalService.update(updateRentalRequest);
     }
 
-    @GetMapping
+    @GetMapping("get-all-rentals")
     private List<GetAllRentalResponse> getAll() {
         return rentalService.getAll();
     }
 
-    @GetMapping("{id}")
-    private GetRentalByIdResponse getById(@PathVariable int id) {
-        return rentalService.getByIdResponse(id);
+    @GetMapping("/get/{id}")
+    private GetRentalByIdResponse getByIdResponse(@PathVariable int id) {
+        return rentalService.getRentalByIdResponse(id);
     }
 }
