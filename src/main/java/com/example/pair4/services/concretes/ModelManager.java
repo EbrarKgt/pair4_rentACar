@@ -1,6 +1,7 @@
 package com.example.pair4.services.concretes;
 
 import com.example.pair4.core.utilities.mappers.ModelMapperService;
+import com.example.pair4.entities.Brand;
 import com.example.pair4.entities.Model;
 import com.example.pair4.repositories.ModelRepository;
 import com.example.pair4.services.abstracts.BrandService;
@@ -34,6 +35,7 @@ public class ModelManager implements ModelService {
         }
 
         Model model = this.modelMapperService.forRequest().map(addModelRequest, Model.class);
+        //model.setId(0);
         this.modelRepository.save(model);
 
     }

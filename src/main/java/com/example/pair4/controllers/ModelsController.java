@@ -17,8 +17,7 @@ import java.util.List;
 public class ModelsController {
     private final ModelService modelService;
 
-    @PostMapping("/add")
-    @ResponseStatus()
+    @PostMapping("add")
     private void add(@RequestBody @Valid AddModelRequest addModelRequest) {
         modelService.add(addModelRequest);
     }

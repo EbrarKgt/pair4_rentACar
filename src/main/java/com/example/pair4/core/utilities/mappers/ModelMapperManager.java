@@ -1,7 +1,10 @@
 package com.example.pair4.core.utilities.mappers;
 
+import com.example.pair4.entities.Model;
+import com.example.pair4.services.dtos.model.requests.AddModelRequest;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeMap;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +27,12 @@ public class ModelMapperManager implements ModelMapperService {
         this.modelMapper.getConfiguration()
                 .setAmbiguityIgnored(true)
                 .setMatchingStrategy(MatchingStrategies.STANDARD);
+
+
+        TypeMap<AddModelRequest, Model> typeMap = this.modelMapper.createTypeMap(AddModelRequest.class, Model.class);
+
+        // Explicitly skip mapping the 'id' field
+        typeMap.addMappings(mapper -> mapper.skip(Model::setId));
 
         return this.modelMapper;
     }
