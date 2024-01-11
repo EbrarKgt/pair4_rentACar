@@ -1,24 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
+import { ReactElement } from 'react';
 import './App.css';
+import logo from "./pair4ImageTest.jpg"
+import "bootstrap/dist/css/bootstrap.css"
 
-function App() {
+function App(): ReactElement {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App App-header'>
+      <img src={logo} className='border border-5 App-logo' alt="logo" />
+      <p>PAIR 4 RENT A CAR</p>
     </div>
   );
 }
