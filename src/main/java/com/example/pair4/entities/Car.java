@@ -28,6 +28,12 @@ public class Car {
     @Column(name = "daily_price")
     private double dailyPrice;
 
+    @Column(name = "image")
+    private String image;
+
+    @Column(name = "logo")
+    private String logo;
+
     @ManyToOne
     @JoinColumn(name = "color_id")
     private Color color;

@@ -1,13 +1,16 @@
 import { ReactElement } from 'react';
 import './App.css';
-import logo from "./pair4ImageTest.jpg"
 import "bootstrap/dist/css/bootstrap.css"
-
+import Navbar from './components/Navbar/Navbar';
+import { Route, Routes } from 'react-router-dom';
+import Homepage from './pages/Homepage/Homepage';
 function App(): ReactElement {
   return (
-    <div className='App App-header'>
-      <img src={logo} className='border border-5 App-logo' alt="logo" />
-      <p>PAIR 4 RENT A CAR</p>
+    <div style={{backgroundColor:"#ba9e80"}}>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Homepage />}></Route>
+      </Routes>
     </div>
   );
 }
