@@ -19,7 +19,7 @@ const ProductCart = (props: Props) => {
                         <div className="card-text d-flex align-items-center" style={{"marginBottom": "16px"}}>
                             <div className=''>{props.product.brandName}</div>
                             <div className='d-md-flex justify-content-md-end'>
-                                <img src={require(`../../assets/logos/${props.product.logo}`)}style={{height:"15%", width:"15%"}} />
+                                <img src={require(`../../assets/logos/${props.product.logo}`)}style={{ width:"15%", aspectRatio:"3/2", objectFit:"contain"}} />
                             </div>
                         </div>
                         <p className="card-text">{props.product.dailyPrice}</p>
