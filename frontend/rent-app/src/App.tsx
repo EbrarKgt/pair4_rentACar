@@ -6,7 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 import Homepage from './pages/Homepage/Homepage';
 function App(): ReactElement {
   return (
-    <div style={{backgroundColor:"#ba9e80"}}>
+    <div style={{backgroundColor:"#DDDCD8"}}>
       <Navbar />
       <Routes>
         <Route path='/' element={<Homepage />}></Route>

@@ -11,9 +11,9 @@ const ProductCart = (props: Props) => {
 
     console.log(props.product.image)
     return (
-        <div className='' style={{"color":"#ba9e80"}}>
-            <div className="card m-3 bg-light  p-2 text-dark bg-opacity-75">
-                <img src={require(`../../assets/images/${props.product.image}`)} className="card-img-top" style={{"height": "220px"}} alt="..."/>
+        <div className=''  style={{"backgroundColor":"#DDDCD8"}}>
+            <div className="card m-3 border border-2 border-dark p-2 text-dark bg-opacity-75" style={{"backgroundColor":"FF7F98"}} >
+                <img src={require(`../../assets/images/${props.product.image}`)} className="card-img-top" style={{"height": "220px", "backgroundColor":"#DDDCD8"}} alt="..."/>
                     <div className="card-body">
                         <h5 className="card-title">{props.product.modelName}</h5>
                         <div className="card-text d-flex align-items-center" style={{"marginBottom": "16px"}}>

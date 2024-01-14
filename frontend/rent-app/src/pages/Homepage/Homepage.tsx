@@ -22,7 +22,7 @@ const Homepage = (props: Props) => {
 
 
   return (
-    <div className='container mt-5' style={{backgroundColor:"#ba9e80"}}>
+    <div className='container mt-5' style={{backgroundColor:"#DDDCD8"}}>
       <div className="row">
         {
           products.map(product => (
