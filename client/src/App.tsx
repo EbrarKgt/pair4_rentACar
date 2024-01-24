@@ -1,20 +1,34 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar/Navbar";
+import Homepage from "./pages/Homepage/Homepage";
+import Contact from "./pages/Contact/Contact";
+import ProductList from "./pages/ProductList/ProductList";
+import Login from "./pages/Login/Login";
+import Signin from "./pages/Signin/Signin";
+import ProductDetail from "./pages/ProductDetail/ProductDetail";
+import NotFound from "./pages/NotFound/NotFound";
+import { ReactElement } from "react";
 
 
-function App() {
+function App():ReactElement {
 
 
   return (
     <>
-      <p className="text-[20px] font-montserrat">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, quia velit esse unde a suscipit facilis soluta numquam tenetur, aspernatur minima aperiam! Deserunt nihil maiores veritatis veniam. Doloremque, animi nesciunt?</p>
-      <div className='container '>
-        <h1 className='text-[40px] text-rentWhite bg-rentRed font-montserrat font-bold'>Hello react + vite app</h1>
-        <h1 className='text-[40px] text-rentWhite bg-rentRed font-comfortaa font-bold'>Hello react + vite app</h1>
-        <h1 className='text-[40px] text-rentWhite bg-rentRed font-open font-bold'>Hello react + vite app</h1>
-        <div className="container">
-          <p className="text-[30px] text-rentWhite bg-rentBlue font-open">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus ipsum eaque magnam impedit quam odit, neque obcaecati quae harum? Voluptas dolor quod dolorem laborum cum! Quae facere adipisci consectetur rem.</p>
-        </div>
-      </div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Homepage />}/>
+        <Route path="/home" element={<Homepage />}/>
+        <Route path="/contact" element={<Contact />}/>
+        <Route path="/cars" element={<ProductList />}/>
+        <Route path="/login" element={<Login />}/>
+        <Route path="/register" element={<Signin />}/>
+        <Route path="/cars/:id" element={<ProductDetail />}/>
+        <Route path="*" element={<NotFound />}/>
+      </Routes>
+      <Footer />
     </>
   )
 }

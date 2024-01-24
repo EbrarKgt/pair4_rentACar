@@ -23,6 +23,11 @@ export default {
         montserrat: ['Montserrat', 'sans-serif'],
         open: ['Open Sans', 'sans-serif'],
         comfortaa: ['Comfortaa', 'sans-serif'],
+      },
+      spacing:{
+        128: '32rem',
+        136: '38rem',
+        140: '41rem'
       }
     },
   },
