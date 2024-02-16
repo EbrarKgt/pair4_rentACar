@@ -1,5 +1,7 @@
 package com.example.pair4.services.dtos.car.responses;
 
+
+import com.example.pair4.services.dtos.requirement.responses.GetRequirementByIdResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,4 +21,9 @@ public class GetAllCarResponse {
     private String modelName;
     private String colorName;
     private String brandName;
+    private int seat;
+    private int luggage;
+    private String fuel;
+    private String gear;
+    private GetRequirementByIdResponse requirement;
 }

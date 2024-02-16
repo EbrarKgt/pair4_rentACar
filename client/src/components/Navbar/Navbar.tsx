@@ -20,7 +20,7 @@ const Navbar = (props: Props) => {
           <nav className='hidden md:flex justify-between flex-1'>
             {/* Menu */}
             <div className="flex items-center lg:text-lg space-x-4 lg:space-x-6">
-              <Link to={"#"} className='hover:text-rentYellow transition duration-500 whitespace-nowrap'>Our Cars</Link>
+              <Link to={"/cars"} className='hover:text-rentYellow transition duration-500 whitespace-nowrap'>Our Cars</Link>
               <Link to={"#"} className='hover:text-rentYellow transition duration-500 whitespace-nowrap'>Get App</Link>
               <Link to={"#"} className='hover:text-rentYellow transition duration-500'>Contact</Link>
             </div>

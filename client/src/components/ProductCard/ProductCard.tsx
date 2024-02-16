@@ -9,8 +9,8 @@ type Props = {
 const ProductCard = (props: Props) => {
   return (
     <>
-      <Link to={"#"}>
-        <div className='flex flex-col h-64 w-96 bg-rentWhite  shadow-2xl transition duration-500'>
+      <Link to={`/cars/${props.product.id}`}>
+        <div className='flex flex-col h-64 w-96 bg-rentWhite shadow-2xl transition duration-500'>
           {/* Car Content */}
           <div className='group relative '>
             {/* Image */}
@@ -24,10 +24,10 @@ const ProductCard = (props: Props) => {
                 <p className='font-black'>{props.product.brandName} {props.product.modelName}</p>
                 <div className='flex flex-row h-[50px] align items-center'>
                   <div className='flex flex-col h-[24px] items-center'>
-                    <p className='pl-1 pt-1 flex items-center'><i className="fa-solid fa-user text-[16px] flex items-center"><strong className='pl-1 text-[12px]'>5</strong></i></p>
+                    <p className='pl-1 pt-1 flex items-center'><i className="fa-solid fa-user text-[16px] flex items-center"><strong className='pl-1 text-[12px]'>{props.product.seat}</strong></i></p>
                   </div>
                   <div className='flex flex-col h-[24px] items-center pl-1'>
-                    <p className='pl-1 pt-1 flex items-center'><i className="flex items-center fa-solid fa-suitcase-rolling text-[16px]"><strong className='pl-1 text-[12px]'>5</strong></i></p>
+                    <p className='pl-1 pt-1 flex items-center'><i className="flex items-center fa-solid fa-suitcase-rolling text-[16px]"><strong className='pl-1 text-[12px]'>{props.product.luggage}</strong></i></p>
                   </div>
                 </div>
 

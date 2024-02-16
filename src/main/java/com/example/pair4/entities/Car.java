@@ -34,6 +34,20 @@ public class Car {
     @Column(name = "logo")
     private String logo;
 
+    @Column(name= "seat")
+    private int seat;
+
+    @Column(name = "luggage")
+    private int luggage;
+
+    @Column(name= "fuel")
+    private String fuel;
+
+    @Column(name= "gear")
+    private String gear;
+
+
+
     @ManyToOne
     @JoinColumn(name = "color_id")
     private Color color;
@@ -41,6 +55,10 @@ public class Car {
     @ManyToOne
     @JoinColumn(name = "model_id")
     private Model model;
+
+    @ManyToOne
+    @JoinColumn(name = "requirement_id")
+    private Requirement requirement;
 
     @OneToMany(mappedBy = "car")
     @JsonIgnore

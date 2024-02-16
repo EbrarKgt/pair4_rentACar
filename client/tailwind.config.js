@@ -9,6 +9,9 @@ export default {
       center: true,
     },
     extend: {
+      aspectRatio:{
+        '3/2': '3 / 2',
+      },
       backgroundSize: {
         'size-200': '200% 200%',
         'size-300': '300% 300%',

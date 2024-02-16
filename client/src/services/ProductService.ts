@@ -8,6 +8,9 @@ class ProductService {
         
         return axios.get(API_URL + "/get-all-cars");
     }
+    getById(id:number) {
+        return axios.get(API_URL + "/get/"+ id)
+    }
 }
 
 
