@@ -27,7 +27,7 @@ const BlogPage = (props: Props) => {
         {
           blogPosts.map(post => (
             <div key={post.id} className="col-lg-4 col-md-6 col-12 mb-5">
-              {/* ProductCart yerine BlogPostCard komponenti kullanılacak. */}
+              {}
               <BlogPostCard post={post} />
             </div>
           ))
