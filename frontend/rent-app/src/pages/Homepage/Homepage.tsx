@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';  //////////////rdvn
 import ProductCart from '../../components/ProductCard/ProductCart'
 import productService from '../../services/productService'
 import { ProductModel } from '../../models/responses/ProductModel'
@@ -23,6 +24,13 @@ const Homepage = (props: Props) => {
 
   return (
     <div className='container mt-5' style={{backgroundColor:"#DDDCD8"}}>
+
+        
+      <div className="text-center mb-4">
+        <Link to="/blog" className="btn btn-primary">Blog Sayfasına Git</Link>
+      </div>
+
+
       <div className="row">
         {
           products.map(product => (
