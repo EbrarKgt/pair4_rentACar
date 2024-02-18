@@ -10,6 +10,7 @@ import Signin from "./pages/Signin/Signin";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import NotFound from "./pages/NotFound/NotFound";
 import { ReactElement } from "react";
+import BlogPage from "./pages/Blogpage/Blogpage";
 
 
 function App():ReactElement {
@@ -27,6 +28,7 @@ function App():ReactElement {
         <Route path="/register" element={<Signin />}/>
         <Route path="/cars/:id" element={<ProductDetail />}/>
         <Route path="*" element={<NotFound />}/>
+        <Route path="/blog" element={<BlogPage />}/>
       </Routes>
       <Footer />
     </>

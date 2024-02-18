@@ -23,6 +23,7 @@ const Navbar = (props: Props) => {
               <Link to={"/cars"} className='hover:text-rentYellow transition duration-500 whitespace-nowrap'>Our Cars</Link>
               <Link to={"#"} className='hover:text-rentYellow transition duration-500 whitespace-nowrap'>Get App</Link>
               <Link to={"#"} className='hover:text-rentYellow transition duration-500'>Contact</Link>
+              <Link to={"/blog"} className='hover:text-rentYellow transition duration-500'>Blog</Link>
             </div>
             {/* Login Area */}
             <div className="flex items-center space-x-4 lg:space-x-8">
