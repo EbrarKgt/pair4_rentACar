@@ -74,7 +74,8 @@ const BlogPage = () => {
   return (
     <>
       {/* Blog Hero Section */}
-      <section className='h-64 md:h-96 lg:h-140 relative bg-cover bg-center' style={{ backgroundImage: "url('/images/view1.jpg')" }}>
+      
+      <section className='h-64 md:h-96 lg:h-140 relative bg-cover bg-center' style={{ backgroundImage: "url('/images/image4.jpg')" }}>
         <div className='absolute inset-0 bg-black bg-opacity-50'>
           <div className='container mx-auto flex justify-center items-center h-full'>
             <div className='text-center'>

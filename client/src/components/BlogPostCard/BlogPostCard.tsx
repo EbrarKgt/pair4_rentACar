@@ -10,7 +10,7 @@ const BlogPostCard = ({ post }: Props) => {
   return (
     <Link to={`/blog/${post.id}`}>
       {/* Hover durumunda bütün kartın büyümesini sağlayan transition ve scale transformu */}
-      <div className='flex flex-col h-72 w-96 bg-rentWhite shadow-lg transition-transform duration-300 transform hover:scale-105'>
+      <div className='flex flex-col h-72 w-96 bg-rentWhite shadow-lg transition-transform duration-300 transform hover:scale-110'>
         {/* Blog Post Thumbnail */}
         <div className='h-40 w-full'>
           <img src={post.thumbnail} alt={post.title} className='h-full w-full object-cover rounded-t-lg' />
