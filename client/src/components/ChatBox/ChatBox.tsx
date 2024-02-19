@@ -7,7 +7,8 @@ interface ChatboxProps {
 }
 
 const Chatbox: React.FC<ChatboxProps> = ({ isOpen, onClose, openChatbox }) => {
-  const [messages, setMessages] = useState<string[]>([]);
+  // Mesajlar artık bir string yerine { sender: string, text: string } şeklinde bir nesne tutacak
+  const [messages, setMessages] = useState<{ sender: string; text: string }[]>([]);
   const [message, setMessage] = useState("");
   const [isButtonVisible, setIsButtonVisible] = useState(true);
 
@@ -17,7 +18,8 @@ const Chatbox: React.FC<ChatboxProps> = ({ isOpen, onClose, openChatbox }) => {
 
   const handleSendMessage = () => {
     if (message.trim() !== "") {
-      setMessages([...messages, message]);
+      // Kullanıcı tarafından gönderilen mesajlar için sender 'user' olarak ayarlanır
+      setMessages([...messages, { sender: 'user', text: message }]);
       setMessage("");
     }
   };
@@ -32,14 +34,13 @@ const Chatbox: React.FC<ChatboxProps> = ({ isOpen, onClose, openChatbox }) => {
     setIsButtonVisible(true); // Düğmeyi göster
   };
 
-  // Max'in başlangıç mesajı
-  const maxInitialMessage = "Hi there! How can I help you today?";
-  // Max'in başlangıç mesajı ekleniyor
   React.useEffect(() => {
-    if (isOpen) {
-      setMessages([...messages, maxInitialMessage]);
+    if (isOpen && messages.length === 0) {
+      // Chatbox açıldığında, Max tarafından bir hoşgeldin mesajı ekleyin
+      const welcomeMessage = { sender: 'max', text: "Hi there! How can I assist you today?" };
+      setMessages([welcomeMessage]);
     }
-  }, [isOpen]);
+  }, [isOpen, messages.length]);
 
   return (
     <>
@@ -49,13 +50,9 @@ const Chatbox: React.FC<ChatboxProps> = ({ isOpen, onClose, openChatbox }) => {
           <div className="overflow-y-auto max-h-72 mb-4">
             {messages.map((msg, index) => (
               <div key={index} className="text-gray-600 mb-2">
-                {/* Kullanıcı mesajları "You:", Max'in mesajı sadece içerik olarak */}
-                {index === messages.length - 1 ? (
-                  <span className="text-purple-600 font-semibold mr-2">Max:</span>
-                ) : (
-                  <span className="text-purple-600 font-semibold mr-2">You:</span>
-                )}
-                {msg}
+                {/* Mesajları gönderenine göre etiketle */}
+                <span className="text-purple-600 font-semibold mr-2">{msg.sender === 'user' ? 'You:' : 'Max:'}</span>
+                {msg.text}
               </div>
             ))}
           </div>
