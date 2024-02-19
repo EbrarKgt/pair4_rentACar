@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BlogPostCard from '../../components/BlogPostCard/BlogPostCard';
-import Chatbox from '../../components/ChatBox/ChatBox'; // Chatbox bileşenini import edin
+import Chatbox from '../../components/ChatBox/ChatBox'; 
 
 const BlogPage = () => {
   const [isChatboxOpen, setIsChatboxOpen] = useState(false);
