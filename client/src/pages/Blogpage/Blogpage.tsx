@@ -115,12 +115,7 @@ const BlogPage = () => {
       <Chatbox isOpen={isChatboxOpen} onClose={closeChatbox} openChatbox={openChatbox} />
 
 
-      {/* Baloncuk */}
-      <div className="fixed bottom-6 right-6 p-6 bg-gradient-to-r from-purple-400 to-indigo-500 rounded-full text-white hover:scale-110 transition-transform duration-300 transform cursor-pointer flex items-center justify-center shadow-lg" onClick={openChatbox} style={{ zIndex: "9999" }}>
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-9 w-9" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 1.1-.9 2-2 2h-6l-4 5v-5H5c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v6z" />
-        </svg>
-      </div>
+      
     </>
   );
 };
