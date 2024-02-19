@@ -7,6 +7,7 @@ interface ChatboxProps {
 }
 
 const Chatbox: React.FC<ChatboxProps> = ({ isOpen, onClose, openChatbox }) => {
+  const [messages, setMessages] = useState<string[]>([]);
   const [message, setMessage] = useState("");
   const [isButtonVisible, setIsButtonVisible] = useState(true);
 
@@ -15,8 +16,10 @@ const Chatbox: React.FC<ChatboxProps> = ({ isOpen, onClose, openChatbox }) => {
   };
 
   const handleSendMessage = () => {
-    console.log("Gönderilen mesaj:", message);
-    setMessage("");
+    if (message.trim() !== "") {
+      setMessages([...messages, message]);
+      setMessage("");
+    }
   };
 
   const handleChatboxOpen = () => {
@@ -29,24 +32,39 @@ const Chatbox: React.FC<ChatboxProps> = ({ isOpen, onClose, openChatbox }) => {
     setIsButtonVisible(true); // Düğmeyi göster
   };
 
+  // Max'in başlangıç mesajı
+  const maxInitialMessage = "Hi there! How can I help you today?";
+  // Max'in başlangıç mesajı ekleniyor
+  React.useEffect(() => {
+    if (isOpen) {
+      setMessages([...messages, maxInitialMessage]);
+    }
+  }, [isOpen]);
+
   return (
     <>
       {isOpen && (
-        <div className="fixed top-1/4 right-6 transform translate-y-1/2 z-50">
-          <div className="bg-white rounded-lg p-8 border border-purple-600" style={{ width: "300px", height: "430px" }}>
-            <h2 className="text-2xl font-bold mb-4 text-purple-600 border-b-2 border-purple-600 pb-2">Live Support 🌟</h2>
-            <p className="text-gray-600 mb-4 flex items-center">
-  <span className="text-purple-600 font-semibold mr-2">Denzel:</span> How can I help you?
-</p>
-
-            <div className="overflow-y-auto h-72 mb-4"></div>
-            <div className="flex">
-              <input type="text" value={message} onChange={handleMessageChange} className="flex-1 border border-gray-300 rounded-l-lg p-2 focus:outline-none" placeholder="Type your message..." />
-              <button onClick={handleSendMessage} className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-r-lg">Send</button>
-            </div>
-            {/* Kapatma butonu */}
-            <button onClick={handleChatboxClose} className="absolute top-2 right-2 bg-purple-600 hover:bg-purple-700 text-white py-1 px-2 rounded-full text-xs">X</button>
+        <div className="fixed bottom-6 right-6 bg-white rounded-lg p-8 border border-purple-600 max-w-md w-full shadow-lg">
+          <h2 className="text-2xl font-bold mb-4 text-purple-600 border-b-2 border-purple-600 pb-2">Live Support 🌟</h2>
+          <div className="overflow-y-auto max-h-72 mb-4">
+            {messages.map((msg, index) => (
+              <div key={index} className="text-gray-600 mb-2">
+                {/* Kullanıcı mesajları "You:", Max'in mesajı sadece içerik olarak */}
+                {index === messages.length - 1 ? (
+                  <span className="text-purple-600 font-semibold mr-2">Max:</span>
+                ) : (
+                  <span className="text-purple-600 font-semibold mr-2">You:</span>
+                )}
+                {msg}
+              </div>
+            ))}
           </div>
+          <div className="flex">
+            <input type="text" value={message} onChange={handleMessageChange} className="flex-1 border border-gray-300 rounded-l-lg p-2 focus:outline-none" placeholder="Type your message..." />
+            <button onClick={handleSendMessage} className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-r-lg">Send</button>
+          </div>
+          {/* Kapatma butonu */}
+          <button onClick={handleChatboxClose} className="absolute top-2 right-2 bg-purple-600 hover:bg-purple-700 text-white py-1 px-2 rounded-full text-xs">X</button>
         </div>
       )}
 
