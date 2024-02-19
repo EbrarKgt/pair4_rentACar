@@ -35,7 +35,10 @@ const Chatbox: React.FC<ChatboxProps> = ({ isOpen, onClose, openChatbox }) => {
         <div className="fixed top-1/4 right-6 transform translate-y-1/2 z-50">
           <div className="bg-white rounded-lg p-8 border border-purple-600" style={{ width: "300px", height: "430px" }}>
             <h2 className="text-2xl font-bold mb-4 text-purple-600 border-b-2 border-purple-600 pb-2">Live Support 🌟</h2>
-            <p className="text-gray-600 mb-4">Hi there! How can I help you?</p>
+            <p className="text-gray-600 mb-4 flex items-center">
+  <span className="text-purple-600 font-semibold mr-2">Denzel:</span> How can I help you?
+</p>
+
             <div className="overflow-y-auto h-72 mb-4"></div>
             <div className="flex">
               <input type="text" value={message} onChange={handleMessageChange} className="flex-1 border border-gray-300 rounded-l-lg p-2 focus:outline-none" placeholder="Type your message..." />

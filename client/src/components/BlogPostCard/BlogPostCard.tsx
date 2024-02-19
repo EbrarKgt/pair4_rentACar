@@ -9,7 +9,8 @@ type Props = {
 const BlogPostCard = ({ post }: Props) => {
   return (
     <Link to={`/blog/${post.id}`}>
-      <div className='flex flex-col h-72 w-96 bg-rentWhite shadow-lg transition-transform duration-300 transform hover:scale-110'>
+      <div className='flex flex-col h-72 w-96 bg-rentWhite shadow-lg transition-transform duration-300 transform hover:scale-110 relative'>
+        <div className='absolute inset-0 border-2 border-transparent rounded-lg hover:border-purple-600 transition-colors'></div>
         <div className='h-40 w-full'>
           <img src={post.thumbnail} alt={post.title} className='h-full w-full object-cover rounded-t-lg' />
         </div>

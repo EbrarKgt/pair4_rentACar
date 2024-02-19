@@ -19,62 +19,62 @@ const BlogPage = () => {
     {
       id: 1,
       title: 'The Future of Car Rentals',
-      thumbnail: '/images/view1.jpg',
+      thumbnail: '/images/carimage1.jpg',
       excerpt: 'Explore how technology is transforming the car rental industry.',
       publishDate: '2024-02-15'
     },
     {
-      id: 1,
-      title: 'The Future of Car Rentals',
-      thumbnail: '/images/view1.jpg',
-      excerpt: 'Explore how technology is transforming the car rental industry.',
+      id: 2,
+      title: 'Discover Scenic Routes',
+      thumbnail: '/images/carimage2.jpg',
+      excerpt: 'Explore breathtaking landscapes and hidden gems with our premium car rental services.',
       publishDate: '2024-02-15'
     },
     {
-      id: 1,
+      id: 3,
+      title: 'Road Trip Essentials',
+      thumbnail: '/images/carimage3.jpg',
+      excerpt: 'Plan the ultimate road trip adventure with our essential tips and advice for a smooth journey.',
+      publishDate: '2024-02-15'
+    },{
+      id: 4,
+      title: 'Long-Term Rentals',
+      thumbnail: '/images/carimage4.jpg',
+      excerpt: 'Enjoy flexibility with our long-term car rental options. Discover the benefits of extended stays..',
+      publishDate: '2024-02-15'
+    },
+    {
+      id: 5,
+      title: 'Safe Driving Tips',
+      thumbnail: '/images/carimage5.jpg',
+      excerpt: 'Stay safe on the road with our essential tips for defensive driving and accident prevention.',
+      publishDate: '2024-02-15'
+    },
+    {
+      id: 6,
       title: 'The Future of Car Rentals',
-      thumbnail: '/images/view1.jpg',
+      thumbnail: '/images/carimage6.jpg',
       excerpt: 'Explore how technology is transforming the car rental industry.',
       publishDate: '2024-02-15'
     },{
-      id: 1,
-      title: 'The Future of Car Rentals',
-      thumbnail: '/images/view1.jpg',
-      excerpt: 'Explore how technology is transforming the car rental industry.',
+      id: 7,
+      title: 'Off-Road Adventures',
+      thumbnail: '/images/carimage7.jpg',
+      excerpt: 'Embark on thrilling off-road adventures with our specialized vehicle rentals.',
       publishDate: '2024-02-15'
     },
     {
-      id: 1,
-      title: 'The Future of Car Rentals',
-      thumbnail: '/images/view1.jpg',
-      excerpt: 'Explore how technology is transforming the car rental industry.',
+      id: 8,
+      title: 'Budget-Friendly Rentals',
+      thumbnail: '/images/carimage8.jpg',
+      excerpt: 'Travel smart with our budget-friendly rental options for your next adventure.',
       publishDate: '2024-02-15'
     },
     {
-      id: 1,
-      title: 'The Future of Car Rentals',
-      thumbnail: '/images/view1.jpg',
-      excerpt: 'Explore how technology is transforming the car rental industry.',
-      publishDate: '2024-02-15'
-    },{
-      id: 1,
-      title: 'The Future of Car Rentals',
-      thumbnail: '/images/view1.jpg',
-      excerpt: 'Explore how technology is transforming the car rental industry.',
-      publishDate: '2024-02-15'
-    },
-    {
-      id: 1,
-      title: 'The Future of Car Rentals',
-      thumbnail: '/images/view1.jpg',
-      excerpt: 'Explore how technology is transforming the car rental industry.',
-      publishDate: '2024-02-15'
-    },
-    {
-      id: 1,
-      title: 'The Future of Car Rentals',
-      thumbnail: '/images/view1.jpg',
-      excerpt: 'Explore how technology is transforming the car rental industry.',
+      id: 9,
+      title: 'Joy of Open Roads with Our Rentals',
+      thumbnail: '/images/carimage9.jpg',
+      excerpt: 'Unlock unforgettable adventures and seamless journeys with our top-notch car rental services.',
       publishDate: '2024-02-15'
     }
   ];
