@@ -14,7 +14,7 @@ const BlogPage = () => {
     setIsChatboxOpen(false);
   };
 
-  // Statik blog post verileri (1 adet)
+  // Static blog pot data
   const blogPosts = [
     {
       id: 1,
@@ -24,54 +24,54 @@ const BlogPage = () => {
       publishDate: '2024-02-15'
     },
     {
-      id: 1,
+      id: 9,
       title: 'Discover Scenic Routes',
       thumbnail: '/images/carimage2.jpg',
       excerpt: 'Explore breathtaking landscapes and hidden gems with our premium car rental services.',
       publishDate: '2024-02-15'
     },
     {
-      id: 1,
+      id: 2,
       title: 'Road Trip Essentials',
       thumbnail: '/images/carimage3.jpg',
       excerpt: 'Plan the ultimate road trip adventure with our essential tips and advice for a smooth journey.',
       publishDate: '2024-02-15'
     },{
-      id: 1,
+      id: 3,
       title: 'Long-Term Rentals',
       thumbnail: '/images/carimage4.jpg',
       excerpt: 'Enjoy flexibility with our long-term car rental options. Discover the benefits of extended stays..',
       publishDate: '2024-02-15'
     },
     {
-      id: 1,
+      id: 4,
       title: 'Safe Driving Tips',
       thumbnail: '/images/carimage5.jpg',
       excerpt: 'Stay safe on the road with our essential tips for defensive driving and accident prevention.',
       publishDate: '2024-02-15'
     },
     {
-      id: 1,
+      id: 5,
       title: 'The Future of Car Rentals',
       thumbnail: '/images/carimage6.jpg',
       excerpt: 'Explore how technology is transforming the car rental industry.',
       publishDate: '2024-02-15'
     },{
-      id: 1,
+      id: 6,
       title: 'Off-Road Adventures',
       thumbnail: '/images/carimage7.jpg',
       excerpt: 'Embark on thrilling off-road adventures with our specialized vehicle rentals.',
       publishDate: '2024-02-15'
     },
     {
-      id: 1,
+      id: 7,
       title: 'Budget-Friendly Rentals',
       thumbnail: '/images/carimage8.jpg',
       excerpt: 'Travel smart with our budget-friendly rental options for your next adventure.',
       publishDate: '2024-02-15'
     },
     {
-      id: 1,
+      id: 8,
       title: 'Joy of Open Roads with Our Rentals',
       thumbnail: '/images/carimage9.jpg',
       excerpt: 'Unlock unforgettable adventures and seamless journeys with our top-notch car rental services.',
@@ -81,7 +81,7 @@ const BlogPage = () => {
 
   return (
     <>
-      {/* Blog Hero Section */}
+      {/* Blog Hero*/}
       <section className='h-64 md:h-96 lg:h-140 relative bg-cover bg-center' style={{ backgroundImage: "url('/images/image4.jpg')" }}>
         <div className='absolute inset-0 bg-black bg-opacity-50'>
           <div className='container mx-auto flex justify-center items-center h-full'>
@@ -93,7 +93,7 @@ const BlogPage = () => {
         </div>
       </section>
 
-      {/* Blog Posts Section */}
+      {/* Blog Posts/card */}
       <section className='container mx-auto py-12'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {blogPosts.map((post) => (

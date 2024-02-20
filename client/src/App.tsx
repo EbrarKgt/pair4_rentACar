@@ -30,7 +30,7 @@ function App():ReactElement {
         <Route path="/cars/:id" element={<ProductDetail />}/>
         <Route path="*" element={<NotFound />}/>
         <Route path="/blog" element={<BlogPage />}/>
-        <Route path="/blog/1" element={<ArticlePage />}/>
+        <Route path="/blog/:id" element={<ArticlePage />}/>
       </Routes>
       <Footer />
     </>
