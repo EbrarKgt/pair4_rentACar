@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { ProductModel } from '../../models/responses/ProductModel'
 import ProductService from '../../services/ProductService'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import Reserve from '../../components/Reserve/Reserve'
 
 type Props = {}
 
 const ProductDetail = (props: Props) => {
   const params = useParams<{ id: string }>()
   const [product, setProduct] = useState<ProductModel>()
+
+  // User must be here!
+  const user = true;
+  const[openModal, setOpenModal] = useState(false);
+  
+
   useEffect(() => {
     if (params.id) {
       ProductService.getById(parseInt(params.id)).then(response => {
@@ -16,6 +23,13 @@ const ProductDetail = (props: Props) => {
     }
   }, [params.id]);
 
+  const handleClick = () =>{
+    if(user){
+      setOpenModal(true);
+    }else{
+      <Link to={"/login"} />
+    }
+  }
   return (
     <>
       {/* Car Detail */}
@@ -73,9 +87,9 @@ const ProductDetail = (props: Props) => {
           <div className='w-150 h-12 flex flex-col justify-center font-comfortaa'>
             <div className='flex flex-row gap-x-4 items-center'>
               <div className='flex flex-col w-36 h-6 ml-4 text-md justify-center '><strong className='text-5xl text-transparent tracking-tight bg-gradient-to-tl bg-clip-text from-cyan-800 from-10% via-gray-300 via-45%  to-cyan-800 to-100%'>REES</strong></div>
-              <div className='flex flex-col w-10 h-10 bg-cyan-600 text-rentWhite justify-center items-center text-xl font-comfortaa rounded-3xl'><strong>{product?.requirement.rate}</strong></div>
+              <div className='flex flex-col w-10 h-10 bg-cyan-600 text-rentWhite justify-center items-center text-xl font-comfortaa rounded-3xl pt-1'><strong>{product?.requirement.rate}</strong></div>
               <div className='flex flex-col w-20 h-12'>
-                <div className='text-lg font-black font-comfortaa'>Good</div>
+                <div className='text-lg font-black font-comfortaa mt-1'>Good</div>
                 <div className='text-xs text-gray-600 -mt-1'>{product?.requirement.review}+ Reviews</div>
               </div>
             </div>
@@ -86,11 +100,15 @@ const ProductDetail = (props: Props) => {
             <div className='flex flex-row items-center'>
             <p className='w-72 flex justify-end items-center pr-4'><i className="fa-solid fa-dollar-sign text-[22px] pr-1 pt-3  "></i><strong className='text-[40px] font-open'>{product?.dailyPrice} <span className='font-comfortaa text-[24px]'>p/day</span></strong></p>
             {/* Hire Button */}
-            <button className='w-34 h-12 bg-gray-300 text-[16px] font-open text-rentWhite hover:bg-rentYellow transition duration-700 rounded-full px-4'>Rent Now <i className="fa-solid fa-key pl-1"></i></button>
+            
+            <button onClick={handleClick} className='w-34 h-12 bg-gray-300 text-[16px] font-open text-rentWhite hover:bg-rentYellow transition duration-700 rounded-full px-4'>Rent Now <i className="fa-solid fa-key pl-1"></i></button>
             </div>
           </div>
         </div>
       </div>
+      
+      {openModal && <Reserve setOpen={setOpenModal} carId={product?.id} />}
+      
     </>
   )
 }

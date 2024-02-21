@@ -10,6 +10,7 @@ import Signin from "./pages/Signin/Signin";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import NotFound from "./pages/NotFound/NotFound";
 import { ReactElement } from "react";
+import AdminPanel from "./pages/AdminPanel/AdminPanel";
 
 
 function App():ReactElement {
@@ -25,6 +26,7 @@ function App():ReactElement {
         <Route path="/cars" element={<ProductList />}/>
         <Route path="/login" element={<Login />}/>
         <Route path="/register" element={<Signin />}/>
+        <Route path="/admin/panel" element={<AdminPanel />}/>
         <Route path="/cars/:id" element={<ProductDetail />}/>
         <Route path="*" element={<NotFound />}/>
       </Routes>

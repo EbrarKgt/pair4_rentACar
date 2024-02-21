@@ -17,19 +17,19 @@ const Footer = (props: Props) => {
         {/* Links */}
         <div className='absolute left-[390px] bottom-[220px] text-gray-200  gap-4 text-[26px] flex flex-col'>
           <Link to={'https://www.instagram.com/'} target='_blank'>
-          <div className='flex flex-row opacity-0 group-hover:opacity-100 transition duration-200 text-[30px]' ><i className="fa-brands fa-instagram "></i></div>
+          <div className='flex flex-row opacity-0 group-hover:opacity-100 hover:text-rentYellow transition duration-200 text-[30px]' ><i className="fa-brands fa-instagram "></i></div>
           </Link>
           <Link to={'https://twitter.com/'} target='_blank'>
-          <div className='flex flex-row opacity-0 group-hover:opacity-100 transition duration-300'><i className="fa-brands fa-x-twitter"></i></div>
+          <div className='flex flex-row opacity-0 group-hover:opacity-100 hover:text-rentYellow transition duration-300 '><i className="fa-brands fa-x-twitter"></i></div>
           </Link>
           <Link to={'https://youtube.com/'} target='_blank'>
-          <div className='flex flex-row opacity-0 group-hover:opacity-100 transition duration-500'><i className="fa-brands fa-youtube"></i></div>
+          <div className='flex flex-row opacity-0 group-hover:opacity-100 hover:text-rentYellow transition duration-500'><i className="fa-brands fa-youtube"></i></div>
           </Link>
           <Link to={'https://mail.google.com/'} target='_blank'>
-          <div className='flex flex-row opacity-0 group-hover:opacity-100 transition duration-700'><i className="fa-regular fa-envelope"></i></div>
+          <div className='flex flex-row opacity-0 group-hover:opacity-100 hover:text-rentYellow transition duration-700'><i className="fa-regular fa-envelope"></i></div>
           </Link>
           <Link to={'#'}>
-          <div className='flex flex-row opacity-0 group-hover:opacity-100 transition duration-1000'><i className="fa-solid fa-phone"></i></div>
+          <div className='flex flex-row opacity-0 group-hover:opacity-100 hover:text-rentYellow transition duration-1000'><i className="fa-solid fa-phone"></i></div>
           </Link>
         </div>
         {/* Scrool to Top */}
