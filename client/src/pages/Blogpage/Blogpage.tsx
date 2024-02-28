@@ -102,7 +102,7 @@ const BlogPage = () => {
         </div>
       </section>
 
-      {/* Call to Action Section */}
+      {/* Call to Action */}
       <section className='bg-cyan-800 text-center py-12 text-white'>
         <h2 className='text-3xl mb-4 font-semibold'>Join Our Community</h2>
         <p className='mb-6'>Stay updated with the latest posts and insights.</p>

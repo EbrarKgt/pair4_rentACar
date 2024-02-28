@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface ChatboxProps {
   isOpen: boolean;
@@ -32,17 +32,36 @@ const Chatbox: React.FC<ChatboxProps> = ({ isOpen, onClose, openChatbox }) => {
     setIsButtonVisible(true);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Enter') {
+        handleSendMessage();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [messages]);
+
+  useEffect(() => {
     if (isOpen && messages.length === 0) {
       const welcomeMessage = { sender: 'max', text: "Hi there! How can I assist you today?" };
       setMessages([welcomeMessage]);
+    } else if (messages.length === 1 && messages[0].sender === 'user') {
+      setTimeout(() => {
+        const maxMessage = { sender: 'max', text: "Apologies for the brief delay, I'll be with you shortly." };
+        setMessages([...messages, maxMessage]);
+      }, 2000); // 2 saniye gecikme ekleyelim
     }
-  }, [isOpen, messages.length]);
+  }, [isOpen, messages]);
 
   return (
     <>
       {isOpen && (
-        <div className="fixed bottom-6 right-6 bg-white rounded-lg p-8 border border-purple-600 max-w-md w-full shadow-lg" style={{ zIndex: 9999 }}> {/* zIndex eklenen satır */}
+        <div className="fixed bottom-6 right-6 bg-white rounded-lg p-8 border border-purple-600 max-w-md w-full shadow-lg" style={{ zIndex: 9999 }}>
           <h2 className="text-2xl font-bold mb-4 text-purple-600 border-b-2 border-purple-600 pb-2">Live Support 🌟</h2>
           <div className="overflow-y-auto max-h-72 mb-4">
             {messages.map((msg, index) => (
@@ -53,7 +72,14 @@ const Chatbox: React.FC<ChatboxProps> = ({ isOpen, onClose, openChatbox }) => {
             ))}
           </div>
           <div className="flex">
-            <input type="text" value={message} onChange={handleMessageChange} className="flex-1 border border-gray-300 rounded-l-lg p-2 focus:outline-none" placeholder="Type your message..." />
+            <input
+              type="text"
+              value={message}
+              onChange={handleMessageChange}
+              onKeyPress={(e) => { if (e.key === 'Enter') handleSendMessage(); }}
+              className="flex-1 border border-gray-300 rounded-l-lg p-2 focus:outline-none"
+              placeholder="Type your message..."
+            />
             <button onClick={handleSendMessage} className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-r-lg">Send</button>
           </div>
           <button onClick={handleChatboxClose} className="absolute top-2 right-2 bg-purple-600 hover:bg-purple-700 text-white py-1 px-2 rounded-full text-xs">X</button>

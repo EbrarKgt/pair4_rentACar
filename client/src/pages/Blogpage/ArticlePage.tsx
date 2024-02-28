@@ -1,14 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import BlogPostCard from '../../components/BlogPostCard/BlogPostCard'; 
 import Chatbox from '../../components/ChatBox/ChatBox';
 
 const ArticlePage = () => {
-  // Parametrelerden articleId'yi al
   const { articleId } = useParams();
 
-  
-
-  // Makale verileri - Örnek veri
+  // Makale verileri
   const articleData = {
     id: articleId,
     title: 'The Future of Car Rentals',
@@ -36,15 +34,38 @@ const ArticlePage = () => {
       <p>In response to growing environmental concerns, car rental companies are increasingly adopting sustainable practices and demonstrating corporate responsibility. From investing in eco-friendly vehicles to implementing green initiatives in their operations, rental companies are prioritizing sustainability as a core value. By embracing sustainable practices, these companies not only reduce their environmental footprint but also appeal to environmentally conscious consumers who prioritize eco-friendly options.</p>
       <br>
       <p>In conclusion, the future of car rentals is filled with exciting possibilities, driven by innovation, technology, and changing consumer demands. As the industry continues to evolve, we can expect to see further advancements in electric and autonomous vehicles, seamless mobile integration, personalized experiences, and sustainable practices. By staying ahead of these trends and embracing innovation, car rental companies can thrive in a rapidly changing landscape and provide customers with unparalleled experiences.</p>
-
-
     `,
     publishDate: '2024-02-15'
   };
 
+  // Related posts verileri
+  const relatedPosts = [
+    {
+      id: 1,
+      title: 'The Future of Car Rentals',
+      thumbnail: '/images/carimage1.jpg',
+      excerpt: 'Explore how technology is transforming the car rental industry.',
+      publishDate: '2024-02-15'
+    },
+    {
+      id: 9,
+      title: 'Discover Scenic Routes',
+      thumbnail: '/images/carimage2.jpg',
+      excerpt: 'Explore breathtaking landscapes and hidden gems with our premium car rental services.',
+      publishDate: '2024-02-15'
+    },
+    {
+      id: 2,
+      title: 'Road Trip Essentials',
+      thumbnail: '/images/carimage3.jpg',
+      excerpt: 'Plan the ultimate road trip adventure with our essential tips and advice for a smooth journey.',
+      publishDate: '2024-02-15'
+    }
+  ];
+
   return (
     <div className="container mx-auto py-12">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Başlık */}
         <h1 className="text-3xl lg:text-4xl font-bold mb-4">{articleData.title}</h1>
         {/* Yayın tarihi */}
@@ -52,13 +73,22 @@ const ArticlePage = () => {
           <span>Published: {articleData.publishDate}</span>
         </div>
         {/* İçerik */}
-        <div className="bg-blue-50 p-6 rounded-lg">
-          <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: articleData.content }}></div>
+        <div className="bg-blue-50 p-6 rounded-lg" style={{ fontSize: '1.05rem' }}>
+  <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: articleData.content }}></div>
+</div>
+
+      </div>
+
+      {/* Related posts */}
+      <div className="container mx-auto py-12">
+        <h2 className="text-3xl font-bold mb-6">Related Posts</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-28">
+          {relatedPosts.map(post => (
+            <BlogPostCard key={post.id} post={post} />
+          ))}
         </div>
       </div>
     </div>
-
-    
   );
 };
 
