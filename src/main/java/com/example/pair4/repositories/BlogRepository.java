@@ -7,6 +7,6 @@ import java.util.List;
 
 @Repository
 public interface BlogRepository extends JpaRepository<Blog, Integer> {
-    // Başlığa göre blog gönderilerini bulmak için bir metod
+
     List<Blog> findAllByTitle(String title);
 }

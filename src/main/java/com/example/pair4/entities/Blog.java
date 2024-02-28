@@ -18,14 +18,13 @@ public class Blog {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "content", length = 10000)
-    private String content;
-
-    @Column(name = "publish_date")
-    private LocalDateTime publishDate;
-
-    @Column(name = "image")
+    @Column(name = "thumbnail")
     private String image;
 
+    @Column(name = "excerpt", length = 10000)
+    private String content;
+
+    @Column(name = "publishDate")
+    private LocalDateTime publishDate;
 
 }
