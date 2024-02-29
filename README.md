@@ -38,7 +38,6 @@ Meet the talented individuals behind the development of REES:
 - [Sema ŞAHİNBAY](https://github.com/semasahinbay)
 - [Rıdvan EKİNCİ](https://github.com/rdvneknc)
 
-![1](https://github.com/rdvneknc/pair4/assets/101838084/886db9c1-9ff6-4f6a-acba-9aa6825fc40e)
 
 Feel free to reach out to any of our collaborators for questions, feedback, or collaboration opportunities.
 
