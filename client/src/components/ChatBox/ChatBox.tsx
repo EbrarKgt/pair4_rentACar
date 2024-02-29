@@ -54,7 +54,7 @@ const Chatbox: React.FC<ChatboxProps> = ({ isOpen, onClose, openChatbox }) => {
       setTimeout(() => {
         const maxMessage = { sender: 'max', text: "Apologies for the brief delay, I'll be with you shortly." };
         setMessages([...messages, maxMessage]);
-      }, 2000); // 2 saniye gecikme ekleyelim
+      }, 2000); 
     }
   }, [isOpen, messages]);
 
