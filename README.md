@@ -58,3 +58,18 @@ We welcome contributions from the community to help improve REES. If you'd like 
 4. Push to the branch: `git push origin feature/YourFeature`
 5. Submit a pull request.
 
+## Special Thanks
+
+We would like to express our sincere gratitude to everyone who contributed to the success of this project and provided us with the opportunity to participate in the Istanbul Kodluyor project:
+
+- **Tobeto Educators**: Thank you for your tireless dedication, guidance, and support throughout the Java & React Full Stack Bootcamp. Your expertise and encouragement have been invaluable in helping us reach our goals.
+
+- **Bootcamp Staff**: A heartfelt thank you to the entire staff at Tobeto for your hard work behind the scenes. Your logistical support and administrative efforts have made this learning journey smooth and enjoyable.
+
+- **Istanbul Kodluyor Contributors**: Our gratitude extends to all individuals involved in the Istanbul Kodluyor project. Your efforts in organizing and facilitating the program have provided us with a valuable learning experience and platform to enhance our skills.
+
+- **Fellow Bootcamp Participants**: To our fellow bootcamp participants, thank you for your collaboration, camaraderie, and shared learning experiences. Your enthusiasm and teamwork have enriched our journey and inspired us to do our best.
+
+This project would not have been possible without the collective effort and encouragement of all those mentioned above. We are truly grateful for your contributions and support.
+
+
