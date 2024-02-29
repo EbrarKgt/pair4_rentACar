@@ -32,10 +32,10 @@ The Entity-Relationship Diagram (ERD) illustrates the database schema and the re
 
 Meet the talented individuals behind the development of REES:
 
-- [Ebrar KAĞIT](https://github.com/EbrarKgt): Frontend Developer
-- [Emre YILDIRIM](https://github.com/emreyldrm): Backend Developer
-- [Sema ŞAHİNBAY](https://github.com/semasahinbay): UI/UX Designer
-- [Rıdvan EKİNCİ](https://github.com/rdvneknc): Project Manager
+- [Ebrar KAĞIT](https://github.com/EbrarKgt)
+- [Emre YILDIRIM](https://github.com/emreyldrm)
+- [Sema ŞAHİNBAY](https://github.com/semasahinbay)
+- [Rıdvan EKİNCİ](https://github.com/rdvneknc)
 
 Feel free to reach out to any of our collaborators for questions, feedback, or collaboration opportunities.
 
