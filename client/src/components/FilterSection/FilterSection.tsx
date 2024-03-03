@@ -37,7 +37,7 @@ const FilterSection = (props: Props) => {
                 ))
             }
             <div className='flex items-center justify-center w-full hover:bg-slate-200  '>
-                <button className='w-16 h-12'
+                <button className='w-36 h-12'
                 onClick={() => props.setFilteredProducts(products)}>All</button>
             </div>
 

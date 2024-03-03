@@ -5,7 +5,7 @@ import ProductCard from '../../components/ProductCard/ProductCard'
 import { ProductModel } from '../../models/responses/ProductModel'
 import ProductService from '../../services/ProductService'
 import SwiperCard from '../../components/SwiperCard/SwiperCard'
-
+import authService from '../../services/authService'
 type Props = {}
 
 const Homepage = (props: Props) => {
@@ -17,8 +17,9 @@ const Homepage = (props: Props) => {
   }, [])
 
   const fetchProducts = () => {
+    console.log("İstek homepage'den atılıyor.")
     ProductService.getAll().then((response: any) => {
-      console.log(response.data)
+      console.log("Cevap homepage'e ulaştı");
       setProducts(response.data)
     })
   }

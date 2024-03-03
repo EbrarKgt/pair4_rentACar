@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { ProductModel } from '../../models/responses/ProductModel'
 import ProductService from '../../services/ProductService'
-import { Link, useParams } from 'react-router-dom'
+import { Link, redirect, unstable_HistoryRouter, useParams } from 'react-router-dom'
 import Reserve from '../../components/Reserve/Reserve'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../store/slices/cartSlice'
+import toastr, { error } from "toastr";
 
 type Props = {}
 
@@ -10,8 +13,10 @@ const ProductDetail = (props: Props) => {
   const params = useParams<{ id: string }>()
   const [product, setProduct] = useState<ProductModel>()
 
+  const dispatch = useDispatch();
+
   // User must be here!
-  const user = true;
+  const user = localStorage.getItem("currentUser");
   const[openModal, setOpenModal] = useState(false);
   
 
@@ -24,12 +29,21 @@ const ProductDetail = (props: Props) => {
   }, [params.id]);
 
   const handleClick = () =>{
-    if(user){
+    console.log(user);
+    
+    if(user != null){
       setOpenModal(true);
     }else{
-      <Link to={"/login"} />
+      toastr.error("Please Login First");
     }
   }
+
+  const addProductToCart = () => {
+    dispatch(addToCart({product:product}));
+  }
+
+
+
   return (
     <>
       {/* Car Detail */}

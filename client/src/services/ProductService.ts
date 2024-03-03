@@ -1,23 +1,22 @@
-import axios, { AxiosResponse } from "axios";
+import { AxiosResponse } from "axios";
+import axiosInstance from "../utils/interceptors/axiosInterceptors";
 
 
-const API_URL = "http://localhost:8080/api/cars";
-const API_URL_BRAND = "http://localhost:8080/api/brands";
-const API_URL_RENTAL = "http://localhost:8080/api/rentals";
+
 
 class ProductService {
     getAll(): Promise<AxiosResponse<any, any>>{
         
-        return axios.get(API_URL + "/get-all-cars");
+        return axiosInstance.get("cars/get-all-cars");
     }
     getById(id:number) {
-        return axios.get(API_URL + "/get/"+ id)
+        return axiosInstance.get("cars/get/"+ id)
     }
     getAllBrands(): Promise<AxiosResponse<any, any>> {
-        return axios.get(API_URL_BRAND + "/get-all-brands");
+        return axiosInstance.get("brands/get-all-brands");
     }
     getAllRentals(): Promise<AxiosResponse<any, any>> {
-        return axios.get(API_URL_RENTAL + "/get-all-rentals")
+        return axiosInstance.get("rentals/get-all-rentals")
     }
 }
 

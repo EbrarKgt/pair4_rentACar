@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 type Props = {}
 
 const Navbar = (props: Props) => {
+
+  const cartState = useSelector((state:any) => state.cart);
+  console.log(cartState);
+
+  useEffect(() => {
+    console.log(cartState);
+  },[cartState])
+
+  const onClick = () => {
+    localStorage.removeItem("jwtToken")
+    localStorage.removeItem("currentUser")
+    console.log(localStorage.getItem("currentUser"));
+    
+  }
+  
+
   return (
     <>
       {/* Header Section */}
@@ -22,7 +39,7 @@ const Navbar = (props: Props) => {
             <div className="flex items-center lg:text-lg space-x-4 lg:space-x-6">
               <Link to={"/cars"} className='hover:text-rentYellow transition duration-500 whitespace-nowrap'>Our Cars</Link>
               <Link to={"#"} className='hover:text-rentYellow transition duration-500 whitespace-nowrap'>Get App</Link>
-              <Link to={"#"} className='hover:text-rentYellow transition duration-500'>Contact</Link>
+              <Link to={"/contact"} className='hover:text-rentYellow transition duration-500'>Contact</Link>
             </div>
             {/* Login Area */}
             <div className="flex items-center space-x-4 lg:space-x-8">
@@ -35,8 +52,16 @@ const Navbar = (props: Props) => {
               </form>
               {/* Sign in Area */}
               <div className="flex items-center space-x-2 lg:space-x-6 lg:text-lg">
-                <Link to={"#"} className='hover:text-rentYellow cursor-pointer transition duration-500'>Login</Link>
-                <Link to={"#"} className='bg-rentYellow px-1 lg:px-3 py-1 hover:bg-yellow-500 hover:text-rentWhite rounded-sm cursor-pointer transition duration-500 whitespace-nowrap'>Sign in</Link>
+
+
+                {/* Logout  */}
+                
+                {/* {localStorage.getItem("currentUser") !== null ? <div><Link to={"/login"} className='hover:text-rentYellow cursor-pointer transition duration-500' onClick={onClick}>Logout</Link></div> : <div className='space-x-6'><Link to={"/login"} className='hover:text-rentYellow cursor-pointer transition duration-500 '>Login</Link>
+                <Link to={"/register"} className='bg-rentYellow px-1 lg:px-3 py-1 hover:bg-yellow-500 hover:text-rentWhite rounded-sm cursor-pointer transition duration-500 whitespace-nowrap'>Sign in</Link></div> } */}
+
+                <Link to={"/login"} className='hover:text-rentYellow cursor-pointer transition duration-500 '>Login</Link>
+                <Link to={"/register"} className='bg-rentYellow px-1 lg:px-3 py-1 hover:bg-yellow-500 hover:text-rentWhite rounded-sm cursor-pointer transition duration-500 whitespace-nowrap'>Sign in</Link>
+                
               </div>
             </div>
           </nav>

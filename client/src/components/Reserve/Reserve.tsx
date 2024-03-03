@@ -4,8 +4,10 @@ import React, { useState } from 'react'
 import "./Reserve.css"
 import Repair from '../Repair/Repair';
 import DatePicker from "react-datepicker";
+import toastr, { error } from "toastr";
 
 import "react-datepicker/dist/react-datepicker.css";
+import axiosInstance from '../../utils/interceptors/axiosInterceptors';
 
 type Props = {
     setOpen: React.Dispatch<React.SetStateAction<boolean>>,
@@ -15,7 +17,7 @@ type Props = {
 const Reserve = (props: Props) => {
     // const [startDate, setStartDate] = useState(new Date());
     // console.log(startDate);
-    
+
 
     const initialValues = {
         startDate: "",
@@ -26,7 +28,7 @@ const Reserve = (props: Props) => {
         startDate: "",
         endDate: "",
         carId: 0,
-        userId: 1,
+        userId: localStorage.getItem("currentUser"),
     });
 
 
@@ -39,9 +41,11 @@ const Reserve = (props: Props) => {
             userId: rental.userId,
         }
         console.log(rentalData);
-        axios.post("http://localhost:8080/api/rentals/add", rentalData)
+        axiosInstance.post("rentals/add", rentalData)
             .then((response) => {
                 console.log(response);
+                toastr.success("Rent is success");
+
             })
             .catch((error: any) => {
                 if (error.response) {
@@ -70,7 +74,7 @@ const Reserve = (props: Props) => {
                                         <div className='text-[20px]'>Start Date</div>
                                         <div className='border-2'>
                                             <Field type="date" name="startDate" id="startDate" />
-                                        </div>  
+                                        </div>
                                     </div>
                                     <div className='flex flex-col'>
                                         <div className='text-[20px]'>End Date</div>
@@ -78,7 +82,12 @@ const Reserve = (props: Props) => {
                                             <Field type="date" name="endDate" id="endDate" placeholder="EndDate" />
                                         </div>
                                     </div>
+                                    <div className='flex flex-col'>
+                                        <div className='text-[20px]'>Test: User Id</div>
+                                        <div className=''>{localStorage.getItem("currentUser")}</div>
+                                    </div>
                                 </div>
+
                                 <div className='flex absolute right-4 bottom-4 h-10 w-32 rounded-full bg-zinc-300 justify-center hover:bg-rentYellow hover:scale-105 transition duration-500 font-comfortaa text-rentWhite'>
                                     <button type='submit' className='tracking-wider'><strong>Reservation</strong></button>
                                 </div>
