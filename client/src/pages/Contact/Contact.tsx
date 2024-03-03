@@ -11,7 +11,11 @@ const Contact: React.FC<Props> = () => {
           <div className="container mx-auto xl:px-32">
             <div className="grid items-center lg:grid-cols-2">
               <div className="mb-12 md:mt-12 lg:mt-0 lg:mb-0">
+<<<<<<< HEAD
                 <div className="relative z-[1] block rounded-lg bg-[hsla(0,0%,100%,0.55)] px-6 py-12 shadow-[0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)] backdrop-blur-[30px] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 md:px-12 lg:-mr-14 shadow-2xl">
+=======
+                <div className="relative z-[1] block rounded-lg bg-[hsla(0,0%,100%,0.55)] px-6 py-12 shadow-[0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)] backdrop-blur-[30px] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 md:px-12 lg:-mr-14">
+>>>>>>> refs/remotes/origin/main
                   <h2 className="mb-12 text-3xl font-bold">Contact us</h2>
                   <form>
                     <div className="relative mb-6" data-te-input-wrapper-init>
@@ -94,4 +98,8 @@ const Contact: React.FC<Props> = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Contact;
+=======
+export default Contact;
+>>>>>>> refs/remotes/origin/main

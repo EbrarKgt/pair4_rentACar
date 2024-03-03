@@ -1,3 +1,4 @@
+
 import { Field, Form, Formik } from "formik";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -63,6 +64,7 @@ const Signin = (props: Props) => {
     },
   ];
 
+
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   const handleNextTestimonial = () => {
@@ -79,12 +81,14 @@ const Signin = (props: Props) => {
 
   return (
     <>
+
       <div className="flex min-h-full flex-1 lg:flex-row font-comfortaa">
         {/* Sol Yarısı (Form) */}
         <div className="flex-1 flex-col justify-center px-6 py-20 lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <h2 className="mt-10 text-center text-3xl font-bold leading-9 tracking-tight text-gray-900 font-comfortaa">
               <strong>Welcome To Rees!</strong>
+
             </h2>
           </div>
 
@@ -124,6 +128,7 @@ const Signin = (props: Props) => {
 
             {/* Old SignIn */}
             {/* <form className="space-y-6" action="#" method="POST">
+
               <div>
                 <label
                   htmlFor="email"
@@ -184,6 +189,7 @@ const Signin = (props: Props) => {
               </div>
             </form> */}
 
+
             <p className="mt-5 text-center text-sm text-gray-500">
               <Link
                 to={"/signin"}
@@ -225,3 +231,4 @@ const Signin = (props: Props) => {
 };
 
 export default Signin;
+

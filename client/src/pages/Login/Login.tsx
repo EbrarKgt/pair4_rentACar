@@ -67,6 +67,7 @@ const Login = (props: Props) => {
     },
   ];
 
+
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   const handleNextTestimonial = () => {
@@ -89,6 +90,7 @@ const Login = (props: Props) => {
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <h2 className="mt-10 text-center text-4xl font-bold leading-9 tracking-tight text-gray-900 font-comfortaa">
               <strong>Drive On!</strong>
+
             </h2>
           </div>
 
@@ -125,6 +127,7 @@ const Login = (props: Props) => {
             {/* Old Login */}
             <div>
               {/* <form className="space-y-6" action="#" method="POST">
+
               <div>
                 <label
                   htmlFor="email"
@@ -190,12 +193,14 @@ const Login = (props: Props) => {
             <p className="mt-5 text-center text-sm text-gray-500">
               <Link
                 to={"/register"}
+
                 className="hover:text-rentYellow cursor-pointer transition duration-500"
               >
                 Not a member?{" "}
               </Link>
             </p>
             </div>
+
           </div>
         </div>
 
@@ -229,3 +234,4 @@ const Login = (props: Props) => {
 };
 
 export default Login;
+
