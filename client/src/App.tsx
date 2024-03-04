@@ -11,6 +11,8 @@ import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import NotFound from "./pages/NotFound/NotFound";
 import { ReactElement } from "react";
 import AdminPanel from "./pages/AdminPanel/AdminPanel";
+import BlogPage from "./pages/Blogpage/Blogpage";
+import ArticlePage from "./pages/Blogpage/ArticlePage";
 
 
 function App():ReactElement {
