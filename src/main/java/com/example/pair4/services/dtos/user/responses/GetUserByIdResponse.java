@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class GetUserByIdResponse {
 
+    private int id;
     private String name;
     private String surname;
     private String email;

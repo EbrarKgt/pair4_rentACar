@@ -5,7 +5,7 @@ import ProductCard from '../../components/ProductCard/ProductCard'
 import { ProductModel } from '../../models/responses/ProductModel'
 import ProductService from '../../services/ProductService'
 import SwiperCard from '../../components/SwiperCard/SwiperCard'
-
+import authService from '../../services/authService'
 type Props = {}
 
 const Homepage = (props: Props) => {
@@ -17,8 +17,9 @@ const Homepage = (props: Props) => {
   }, [])
 
   const fetchProducts = () => {
+    console.log("İstek homepage'den atılıyor.")
     ProductService.getAll().then((response: any) => {
-      console.log(response.data)
+      console.log("Cevap homepage'e ulaştı");
       setProducts(response.data)
     })
   }
@@ -44,7 +45,7 @@ const Homepage = (props: Props) => {
             <p className='text-rentWhite group-hover:mb-1 duration-500 text-sm lg:text-base w-3/4 lg:w-2/3'>Discover the perfect blend of speed, ease, and affordability with our car rental service. Enjoy lightning-quick bookings, straightforward processes, and economic options for your effortless journey. Your adventure begins here!</p>
             {/* Detail Container */}
             <div className='flex float-right space-x-8 opacity-0 group-hover:opacity-100 group-hover:mb-5 lg:group-hover:mb-14 duration-1000'>
-              <Link to={"#"} className='text-rentWhite text-sm lg:text-base bg-rentYellow rounded-full p-2 hover:p-4 lg:hover:p-5 lg:hover:text-xl transtion duration-1000'>Rent Now <i className="fa-solid fa-key pl-1"></i></Link>
+              <Link to={"/cars"} className='text-rentWhite text-sm lg:text-base bg-rentYellow rounded-full p-2 hover:p-4 lg:hover:p-5 lg:hover:text-xl transtion duration-1000'>Rent Now <i className="fa-solid fa-key pl-1"></i></Link>
             </div>
           </div>
         </div>
