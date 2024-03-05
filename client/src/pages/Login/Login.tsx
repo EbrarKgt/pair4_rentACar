@@ -88,38 +88,40 @@ const Login = (props: Props) => {
         {/* Sol Yarısı (Form) */}
         <div className="flex-1 flex-col justify-center px-6 py-20 lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <h2 className="mt-10 text-center text-4xl font-bold leading-9 tracking-tight text-gray-900 font-comfortaa">
-              <strong>Drive On!</strong>
-
-            </h2>
+            <div className="pl-[60px]">
+              <h2 className="mt-10 text-center text-4xl font-bold leading-9 tracking-tight text-gray-900 font-comfortaa">
+                <strong>Drive On!</strong>
+              </h2>
+            </div>
           </div>
 
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
 
             <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-              <Form>
+              <Form autoComplete="off">
                 {/* Login */}
                 <div className='flex gap-8 pl-16 font-comfortaa flex-col'>
                   <div className='flex flex-col'>
-                    <div className='text-[20px]'>Username</div>
-                    <div className='border-2'>
-                      <Field type="text" name="username" id="username" />
+                    <div className='text-[16px]  '>Username</div>
+                    <div className='border-2 flex flex-row bg-red-500'>
+                      <div className=" w-full bg-red-50">
+                      <Field type="text" name="username" id="username" className="w-full h-[28px]" />
+                      </div>
                     </div>
                   </div>
                   <div className='flex flex-col'>
-                    <div className='text-[20px]'>Password</div>
+                    <div className='text-[16px]'>Password</div>
                     <div className='border 2'>
-                      <Field type="password" name="password" id="password" />
+                      <Field type="password" name="password" id="password" className="w-full h-[28px]" />
                     </div>
                   </div>
                 </div>
                 <div className="flex justify-center pl-16">
-                <div className='flex flex-col mt-10  h-10 w-80 rounded-full bg-zinc-300 justify-center hover:bg-rentYellow hover:scale-105 transition duration-500 font-comfortaa text-rentWhite'>
+                <div className='flex flex-col mt-10  h-10 w-80 rounded-md bg-zinc-300 justify-center hover:bg-rentYellow  transition duration-500 font-comfortaa text-rentWhite'>
                   <button type='submit' className='tracking-wider'><strong>Login</strong></button>
                 </div>
                 </div>
               </Form>
-
             </Formik>
 
 
