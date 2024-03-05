@@ -1,7 +1,7 @@
 # REES: Rent A Car Project Pair 4
 
 
-![rees](https://github.com/rdvneknc/pair4/assets/101838084/61103a2c-6c28-4a1d-b85d-797ea3b06417)
+![rees](https://github.com/EbrarKgt/pair4_rentACar/assets/41169219/3854e45e-36f1-4597-8814-1e102d8a25ae)
 
 ## About The Project
 
@@ -27,7 +27,8 @@ REES (TOBETO Pair 4 - Rent A Car Project ) is a comprehensive web-based car rent
 
 The Entity-Relationship Diagram (ERD) illustrates the database schema and the relationships between different entities within the system.
 
-[![ER Diagram](https://imgtr.ee/images/2023/12/15/c98ab75aa4b9cecb91329ced519a5e2b.png)](https://imgtr.ee/image/IqbBIm)
+![ER Diagram](https://github.com/EbrarKgt/pair4_rentACar/assets/41169219/4b22cf9c-311c-433d-9855-f659f9668afc)
+
 
 ## Collaborators
 
