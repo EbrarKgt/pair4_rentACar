@@ -42,6 +42,12 @@ Meet the talented individuals behind the development of REES:
 
 Feel free to reach out to any of our collaborators for questions, feedback, or collaboration opportunities.
 
+## Project Preview
+
+Here's a brief video showcasing the functionality of our project.
+
+https://github.com/EbrarKgt/pair4_rentACar/assets/101838084/c829357a-b390-4d97-9d61-986c25998310
+
 ## Getting Started
 
 To get started with REES, follow these steps:
