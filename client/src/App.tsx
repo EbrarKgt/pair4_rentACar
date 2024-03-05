@@ -11,6 +11,8 @@ import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import NotFound from "./pages/NotFound/NotFound";
 import { ReactElement } from "react";
 import AdminPanel from "./pages/AdminPanel/AdminPanel";
+import BlogPage from "./pages/Blogpage/Blogpage";
+import ArticlePage from "./pages/Blogpage/ArticlePage";
 
 
 function App():ReactElement {
@@ -29,6 +31,8 @@ function App():ReactElement {
         <Route path="/admin/panel" element={<AdminPanel />}/>
         <Route path="/cars/:id" element={<ProductDetail />}/>
         <Route path="*" element={<NotFound />}/>
+        <Route path="/blog" element={<BlogPage />}/>
+        <Route path="/blog/:id" element={<ArticlePage />}/>
       </Routes>
       <Footer />
     </>

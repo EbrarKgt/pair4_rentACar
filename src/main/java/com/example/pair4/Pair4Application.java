@@ -17,4 +17,5 @@ public class Pair4Application {
     public ModelMapper getModelMapper() {
         return new ModelMapper();
     }
+    
 }
